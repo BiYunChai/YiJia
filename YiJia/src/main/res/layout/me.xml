@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <!--top-->
+    <LinearLayout
+        style="@style/topstyle">
+    </LinearLayout>
+
+
+    <!--皮肤-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="@color/colorPrimary">
+    </LinearLayout>
+    <!--内容-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:orientation="vertical">
+        <!--我的工地-->
+        <LinearLayout
+            style="@style/melinnear">
+            <ImageView
+                style="@style/meimaview"
+                android:src="@mipmap/mybuilding"/>
+            <TextView
+                style="@style/metext"
+                android:text="工地"/>
+            <ImageButton
+                style="@style/meimabutton"/>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/underline"/>
+        <!--我的问题-->
+        <LinearLayout
+            style="@style/melinnear"
+            >
+            <ImageView
+                style="@style/meimaview"
+                android:src="@mipmap/myquestion"
+                />
+            <TextView
+                style="@style/metext"
+                android:text="问题"/>
+            <ImageButton
+                style="@style/meimabutton"/>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/underline"/>
+        <!--我的帖子-->
+        <LinearLayout
+            style="@style/melinnear">
+            <ImageView
+                style="@style/meimaview"
+                android:src="@mipmap/tiezi"/>
+            <TextView
+                style="@style/metext"
+                android:text="帖子"
+                />
+            <ImageButton
+                style="@style/meimabutton"/>
+
+        </LinearLayout>
+        <LinearLayout
+            style="@style/underline"/>
+        <!--我的收藏-->
+        <LinearLayout
+            style="@style/melinnear">
+            <ImageView
+                style="@style/meimaview"
+                android:src="@mipmap/icon_mycollection"/>
+            <TextView
+                style="@style/metext"
+                android:text="收藏"/>
+            <ImageButton
+                style="@style/meimabutton"/>
+
+        </LinearLayout>
+        <LinearLayout
+            style="@style/underline"/>
+        <!--设置-->
+        <LinearLayout
+            style="@style/melinnear">
+            <ImageView
+                style="@style/meimaview"
+                android:src="@mipmap/mysetting"/>
+            <TextView
+                style="@style/metext"
+                android:text="设置"/>
+            <ImageButton
+                style="@style/meimabutton"/>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
