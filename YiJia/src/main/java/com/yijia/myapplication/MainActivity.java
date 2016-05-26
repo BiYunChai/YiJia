@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    RadioGroup mRadioGroup;
+    RadioGroup mRadioGroup;//这是大黄的事
     ViewPager mViewPager;
 
 
