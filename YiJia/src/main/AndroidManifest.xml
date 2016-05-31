@@ -37,6 +37,32 @@
         <activity android:name=".Cal_cldetailActivity" />
         <activity android:name=".Cal_bzActivity" />
         <activity android:name=".Cal_bzdetailActivity"></activity>
+        <activity android:name=".MyBuildActivity">
+        </activity>
+        <activity android:name=".BuildStageActivity">
+        </activity>
+        <activity android:name=".LoginActivity">
+        </activity>
+        <activity android:name=".RegisterActivity">
+        </activity>
+        <activity android:name=".SettingActivity">
+
+        </activity>
+        <activity android:name=".AboutUsActivity">
+        </activity>
+        <activity android:name=".MyStoreActivity">
+
+        </activity>
+        <activity android:name=".ForgetPasswordActivity"/>
+        <activity android:name=".MyPostActivity"/>
+        <activity android:name=".MyquestionActivity"/>
+        <activity android:name=".MyRaisepostDetailActivity"/>
+        <activity android:name=".MyRaisequesDetailActivity"/>
+        <activity android:name=".MyReplypostDetailActivity"/>
+        <activity android:name=".MyReplyquesDetailActivity"/>
+        <activity android:name=".PersonalInformationActivity"/>
+
+
     </application>
 
 </manifest>
