@@ -8,7 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.yijia.beans.MyBuild;
 import com.yijia.beans.MyQuestionData;
 import com.yijia.myapplication.R;
 
