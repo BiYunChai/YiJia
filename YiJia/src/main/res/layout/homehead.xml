@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:id="@+id/looppic"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:paddingTop="1dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <View
+                        android:id="@+id/dot_0"
+                        style="@style/dotpic"
+                        android:background="@mipmap/dot_focused"/>
+
+                    <View
+                        android:id="@+id/dot_1"
+                        style="@style/dotpic"
+                        android:background="@mipmap/dot_normal"/>
+                    <View
+                        android:id="@+id/dot_2"
+                        style="@style/dotpic"
+                        android:background="@mipmap/dot_normal"/>
+                    <View
+                        android:id="@+id/dot_3"
+                        style="@style/dotpic"
+                        android:background="@mipmap/dot_normal"/>
+                    <View
+                        android:id="@+id/dot_4"
+                        style="@style/dotpic"
+                        android:background="@mipmap/dot_normal"/>
+
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+
+    <!-- 小功能区域-->
+    <LinearLayout
+        android:id="@+id/smallmodule"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical">
+        <!--第一栏功能-->
+        <LinearLayout
+            style="@style/homemiddle">
+
+            <LinearLayout
+                style="@style/homemiddlechip">
+
+                <ImageView
+                    android:id="@+id/homestyledesign"
+                    style="@style/homemiddlecontent"
+                    android:src="@mipmap/icon_design"
+                    android:layout_weight="2"
+                    />
+                <TextView
+                    style="@style/homemiddlecontent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="15dp"
+                    android:text="户型设计" />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/homemiddlechip">
+                <ImageView
+                    android:id="@+id/safe"
+                    style="@style/homemiddlecontent"
+                    android:src="@mipmap/icon_safe"
+                    android:layout_weight="2"
+                    />
+                <TextView
+                    style="@style/homemiddlecontent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="15dp"
+                    android:text="装修保障" />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/homemiddlechip">
+                <ImageView
+                    android:id="@+id/company"
+                    style="@style/homemiddlecontent"
+                    android:src="@mipmap/icon_company"
+                    android:layout_weight="2"
+                    />
+                <TextView
+                    style="@style/homemiddlecontent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="15dp"
+                    android:text="装修公司" />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/homemiddlechip">
+                <ImageView
+                    android:id="@+id/calcuator"
+                    style="@style/homemiddlecontent"
+                    android:src="@mipmap/icon_calculator"
+                    android:layout_weight="2"
+                    />
+                <TextView
+                    style="@style/homemiddlecontent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="15dp"
+                    android:text="计算器" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <!--第二栏功能-->
+        <LinearLayout
+            style="@style/homemiddle"
+
+            >
+            <LinearLayout
+                style="@style/homemiddlechip"
+                >
+                <ImageView
+                    android:id="@+id/book"
+                    style="@style/homemiddlecontent"
+                    android:src="@mipmap/icon_book"
+                    android:layout_weight="2"
+                    />
+                <TextView
+                    style="@style/homemiddlecontent"
+                    android:text="装修知识"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/homemiddlechip"
+                >
+                <ImageView
+                    android:id="@+id/thene"
+                    style="@style/homemiddlecontent"
+                    android:src="@mipmap/icon_theme2"
+                    android:layout_weight="2"
+                    />
+                <TextView
+                    android:layout_weight="1"
+                    style="@style/homemiddlecontent"
+                    android:layout_marginLeft="15dp"
+                    android:text="精品专题"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/homemiddlechip"
+                >
+                <ImageView
+                    android:id="@+id/calendar"
+                    style="@style/homemiddlecontent"
+                    android:src="@mipmap/icon_calendar"
+                    android:layout_weight="2"
+                    />
+                <TextView
+                    android:layout_weight="1"
+                    style="@style/homemiddlecontent"
+                    android:layout_marginLeft="15dp"
+                    android:text="装修黄历"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/homemiddlechip"
+
+                >
+                <ImageView
+                    android:id="@+id/service"
+                    style="@style/homemiddlecontent"
+                    android:src="@mipmap/icon_service2"
+                    android:layout_weight="2"
+                    android:onClick="ClickService"
+                    />
+                <TextView
+                    android:layout_weight="1"
+                    style="@style/homemiddlecontent"
+                    android:layout_marginLeft="15dp"
+                    android:text="官方客服"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/upline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ccc"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        />
+
+
+</LinearLayout>

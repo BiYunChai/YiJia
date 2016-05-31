@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yijia.myapplication.Cal_clActivity"
+    android:orientation="vertical">
+    <LinearLayout
+        style="@style/topstyle"
+        android:padding="3dp">
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:src="@mipmap/back"
+            android:onClick="backcalcuator"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginTop="8dp"
+            android:textColor="#ffffff"
+            android:text="计算窗帘价格"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="12"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:text="窗帘计算方式为窗宽*倍数*单价（倍数为2）"
+                android:gravity="center"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/window_width"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:hint="请输入窗户宽度"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="米"
+                android:gravity="center"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/cloth_perprice"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:hint="请输窗帘单价"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="元/米"
+                android:gravity="center"/>
+        </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            >
+            <TextView
+
+                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:background="@drawable/textview"
+                android:textColor="#ffffff"
+                android:text="计算"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"
+                android:onClick="cl_count"
+                />
+        </LinearLayout>
+
+
+</LinearLayout>
+
+

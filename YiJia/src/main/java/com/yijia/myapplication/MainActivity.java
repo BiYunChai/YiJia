@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     LookFragment mLookFragment;
     HomeFragment mHomeFragment;
     MeFragment mMeFragment;
+
     FragmentManager mFragmentManager;
     FragmentTransaction mFragmentTransaction;
 
@@ -45,9 +47,11 @@ public class MainActivity extends AppCompatActivity {
 
         initViews();
         initData();
-        initListeners();
+       initListeners();
 
     }
+
+
 
     private void initViews() {
         mViewPager= (ViewPager) findViewById(R.id.middle);
@@ -61,11 +65,12 @@ public class MainActivity extends AppCompatActivity {
         mForumFragment=new ForumFragment();
         mMeFragment=new MeFragment();
 
+
+
         mList.add(mHomeFragment);
         mList.add(mLookFragment);
         mList.add(mForumFragment);
         mList.add(mMeFragment);
-
 
         mFragmentManager=getSupportFragmentManager();
         mMyAdapter=new MyAdapter(mFragmentManager,mList);
@@ -78,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 resetViewPager(checkedId);
             }
         });
+
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -98,6 +104,22 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /*@Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_MOVE:
+                mViewPager.requestDisallowInterceptTouchEvent(true);
+                break;
+            case MotionEvent.ACTION_UP:
+                mViewPager.requestDisallowInterceptTouchEvent(true);
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                mViewPager.requestDisallowInterceptTouchEvent(false);
+                break;
+        }
+
+    }*/
+
     private void resetViewPager(int checkedId) {
 
         switch (checkedId){
@@ -114,6 +136,8 @@ public class MainActivity extends AppCompatActivity {
                 mViewPager.setCurrentItem(3);
                 break;
         }
+
+
     }
     private void resetRadioButton(int position) {
 

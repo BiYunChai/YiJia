@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     >
     <!--top-->
     <LinearLayout
+
         style="@style/topstyle">
         <ImageView
             android:layout_weight="1"
@@ -16,167 +20,42 @@
             style="@style/hometop"
             android:background="@drawable/searchedit"
             android:drawableRight="@mipmap/search"
-            android:paddingRight="5dp"
-            android:paddingBottom="8dp"/>
+            android:paddingRight="10dp"
+            />
         <ImageView
             android:layout_weight="1"
             style="@style/hometop"
             android:src="@mipmap/message" />
     </LinearLayout>
-
-
-    <!-- 小功能区域-->
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="3"
-            android:orientation="vertical">
-        <!--第一栏功能-->
-        <LinearLayout
-                style="@style/homemiddle">
-
-            <LinearLayout
-                style="@style/homemiddlechip">
-
-                <ImageView
-                    style="@style/homemiddlecontent"
-                    android:src="@mipmap/icon_design"
-                    android:layout_weight="2"
-                    />
-                <TextView
-                    style="@style/homemiddlecontent"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="15dp"
-                    android:text="户型设计" />
-            </LinearLayout>
-            <LinearLayout
-                style="@style/homemiddlechip">
-                <ImageView
-                    style="@style/homemiddlecontent"
-                    android:src="@mipmap/icon_safe"
-                    android:layout_weight="2"
-                    />
-                <TextView
-                    style="@style/homemiddlecontent"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="15dp"
-                    android:text="装修保障" />
-            </LinearLayout>
-            <LinearLayout
-                style="@style/homemiddlechip">
-                <ImageView
-                    style="@style/homemiddlecontent"
-                    android:src="@mipmap/icon_company"
-                    android:layout_weight="2"
-                    />
-                <TextView
-                    style="@style/homemiddlecontent"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="15dp"
-                    android:text="装修公司" />
-            </LinearLayout>
-            <LinearLayout
-                style="@style/homemiddlechip">
-                <ImageView
-                    style="@style/homemiddlecontent"
-                    android:src="@mipmap/icon_calculator"
-                    android:layout_weight="2"
-                    />
-                <TextView
-                    style="@style/homemiddlecontent"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="15dp"
-                    android:text="计算器" />
-            </LinearLayout>
-        </LinearLayout>
-
-
-        <!--第二栏功能-->
-        <LinearLayout
-           style="@style/homemiddle"
-
-           >
-            <LinearLayout
-                style="@style/homemiddlechip"
-                >
-                <ImageView
-                    style="@style/homemiddlecontent"
-                    android:src="@mipmap/icon_book"
-                    android:layout_weight="2"
-                    />
-                <TextView
-                    style="@style/homemiddlecontent"
-                    android:text="装修知识"
-                    android:layout_marginLeft="15dp"
-                    android:layout_weight="1"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                style="@style/homemiddlechip"
-                >
-                <ImageView
-                    style="@style/homemiddlecontent"
-                    android:src="@mipmap/icon_theme2"
-                    android:layout_weight="2"
-                    />
-                <TextView
-                    android:layout_weight="1"
-                    style="@style/homemiddlecontent"
-                    android:layout_marginLeft="15dp"
-                    android:text="精品专题"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                style="@style/homemiddlechip"
-                >
-                <ImageView
-                    style="@style/homemiddlecontent"
-                    android:src="@mipmap/icon_calendar"
-                    android:layout_weight="2"
-                   />
-                <TextView
-                    android:layout_weight="1"
-                    style="@style/homemiddlecontent"
-                    android:layout_marginLeft="15dp"
-                    android:text="装修黄历"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                style="@style/homemiddlechip"
-
-                >
-                <ImageView
-
-                    style="@style/homemiddlecontent"
-                    android:src="@mipmap/icon_service2"
-                    android:layout_weight="2"
-                    />
-                <TextView
-                    android:layout_weight="1"
-                    style="@style/homemiddlecontent"
-                    android:layout_marginLeft="15dp"
-                    android:text="官方客服"
-                    />
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
+    <!--listheader-->
 
     <!-- 推荐-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="6"
-        android:orientation="vertical"
-        android:background="#ffffff"
+        android:layout_weight="12"
         >
-        <ListView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+            android:id="@+id/homelistview_pulltorefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            ptr:ptrDrawable="@drawable/default_ptr_flip"
+            ptr:ptrAnimationStyle="flip"
+            />
+        <!--<ListView
+            android:id="@+id/homelistview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
 
-        </ListView>
-
+        </ListView>-->
 
     </LinearLayout>
+
+
+
+
+
 
 
 
