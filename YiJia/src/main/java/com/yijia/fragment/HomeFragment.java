@@ -129,7 +129,6 @@ public class HomeFragment extends Fragment{
         initListHeader(viewheader);
         //初始化数据
         initListData();
-
      //   initListAdapter();
 
         return view;
