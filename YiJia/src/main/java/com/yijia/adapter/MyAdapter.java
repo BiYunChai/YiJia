@@ -19,6 +19,11 @@ public class MyAdapter extends FragmentPagerAdapter{
         this.mList = mList;
     }
 
+  /*  @Override
+    public CharSequence getPageTitle(int position) {
+        return super.getPageTitle(position);
+    }*/
+
     @Override
     public Fragment getItem(int position) {
         return mList.get(position);

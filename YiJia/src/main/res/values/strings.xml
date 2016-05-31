@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">宜家</string>
+    <string name="mybuild">我的工地</string>
+<string name="aboutus">&#160;&#160;&#160;&#160;宜家是一款手机端的装修软件。使用宜家可以方便地找到自己喜欢的装修风格，
+    同时也可以由管理员筛选装修公司或者用户指定装修公司,通过互联网技术为家装消费用户各商家优质的装修家居消费品信息，帮助其实现轻松、放心的家居装修。</string>
+    <string name="welcome">Hi,欢迎来到宜家！</string>
+    <string name="LoginAndRegister">登录/注册</string>
 </resources>

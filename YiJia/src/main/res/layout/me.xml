@@ -4,20 +4,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-    <!--top-->
-    <LinearLayout
-        style="@style/topstyle">
-    </LinearLayout>
-
-
     <!--皮肤-->
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
-        android:background="@color/colorPrimary">
-    </LinearLayout>
+        android:layout_weight="4"
+        android:orientation="vertical"
+        android:background="@color/topColor">
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textColor="@color/write"
+            android:layout_centerInParent="true"
+            android:text="@string/welcome"/>
+        <Button
+            android:id="@+id/LoginAndRegister"
+            style="@style/LoginAndRegisterButton"
+            android:layout_below="@+id/welcome"
+            android:text="@string/LoginAndRegister"
+            android:textColor="@color/topColor"
+            android:background="@drawable/shape"/>
+    </RelativeLayout>
     <!--内容-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,22 +35,27 @@
         android:orientation="vertical">
         <!--我的工地-->
         <LinearLayout
-            style="@style/melinnear">
+            android:id="@+id/building"
+            style="@style/melinnear"
+            android:background="@drawable/layout_selecter"
+            >
             <ImageView
                 style="@style/meimaview"
                 android:src="@mipmap/mybuilding"/>
             <TextView
                 style="@style/metext"
                 android:text="工地"/>
-            <ImageButton
+            <ImageView
                 style="@style/meimabutton"/>
+
         </LinearLayout>
         <LinearLayout
             style="@style/underline"/>
         <!--我的问题-->
         <LinearLayout
+            android:id="@+id/question"
             style="@style/melinnear"
-            >
+            android:background="@drawable/layout_selecter">
             <ImageView
                 style="@style/meimaview"
                 android:src="@mipmap/myquestion"
@@ -49,14 +63,16 @@
             <TextView
                 style="@style/metext"
                 android:text="问题"/>
-            <ImageButton
+            <ImageView
                 style="@style/meimabutton"/>
         </LinearLayout>
         <LinearLayout
             style="@style/underline"/>
         <!--我的帖子-->
         <LinearLayout
-            style="@style/melinnear">
+            android:id="@+id/post"
+            style="@style/melinnear"
+            android:background="@drawable/layout_selecter">
             <ImageView
                 style="@style/meimaview"
                 android:src="@mipmap/tiezi"/>
@@ -64,7 +80,7 @@
                 style="@style/metext"
                 android:text="帖子"
                 />
-            <ImageButton
+            <ImageView
                 style="@style/meimabutton"/>
 
         </LinearLayout>
@@ -72,14 +88,16 @@
             style="@style/underline"/>
         <!--我的收藏-->
         <LinearLayout
-            style="@style/melinnear">
+            android:id="@+id/store"
+            style="@style/melinnear"
+            android:background="@drawable/layout_selecter">
             <ImageView
                 style="@style/meimaview"
                 android:src="@mipmap/icon_mycollection"/>
             <TextView
                 style="@style/metext"
                 android:text="收藏"/>
-            <ImageButton
+            <ImageView
                 style="@style/meimabutton"/>
 
         </LinearLayout>
@@ -87,14 +105,16 @@
             style="@style/underline"/>
         <!--设置-->
         <LinearLayout
-            style="@style/melinnear">
+            android:id="@+id/setting"
+            style="@style/melinnear"
+            android:background="@drawable/layout_selecter">
             <ImageView
                 style="@style/meimaview"
                 android:src="@mipmap/mysetting"/>
             <TextView
                 style="@style/metext"
                 android:text="设置"/>
-            <ImageButton
+            <ImageView
                 style="@style/meimabutton"/>
 
         </LinearLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+<ImageView
+    android:id="@+id/wechatcode"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/wechatcode"
+   android:layout_centerInParent="true" />
+    <TextView
+        android:id="@+id/wechattext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="扫码关注我们哦"
+        android:textSize="16sp"
+      android:layout_below="@+id/wechatcode"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

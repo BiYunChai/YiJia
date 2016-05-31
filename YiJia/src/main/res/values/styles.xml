@@ -86,7 +86,6 @@
         <item name="android:layout_weight">1</item>
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:src">@mipmap/next</item>
-        <item name="android:background">#ffffff</item>
     </style>
     <!--个人中心功能布局-->
     <style name="melinnear">
@@ -102,5 +101,54 @@
         <item name="android:layout_height">1dp</item>
         <item name="android:background">#a8eef9</item>
     </style>
-
+    <style name="settingbutton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:src">@mipmap/detail</item>
+    </style>
+    <!--设置中的字体-->
+    <style name="settingtext">
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">match_parent</item>
+    <item name="android:layout_weight">4</item>
+    <item name="android:textSize">16sp</item>
+    <item name="android:gravity">center_vertical</item>
+    <item name="android:textColor">@color/textUp</item>
+    </style>
+    <!--设置中的图标-->
+    <style name="settingview">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+    <!--设置里的下划线-->
+    <style name="settingunderline">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">#33b3b0b0</item>
+    </style>
+    <!--收藏中的字体-->
+    <style name="scoretext">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/textUp</item>
+    </style>
+    <style name="LoginAndRegisterButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="mwquesandpost">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+    </style>
 </resources>
