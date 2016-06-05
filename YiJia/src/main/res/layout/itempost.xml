@@ -41,10 +41,10 @@
         android:layout_height="0dp"
         android:layout_weight="1">
     <TextView
-        android:id="@+id/quescontent"
+        android:id="@+id/postcontent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="这是提出的问题文本"
+        android:text="这是提出的帖子文本"
         android:layout_marginLeft="10dp"
         android:singleLine="true"
         android:textSize="20sp"/>

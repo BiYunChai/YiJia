@@ -10,8 +10,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.yijia.adapter.MyQueslistviewAdapter;
-import com.yijia.beans.MyQuestionData;
+import com.yijia.adapter.MyPostlistviewAdapter;
+import com.yijia.beans.MyPostData;
 import com.yijia.myapplication.MyRaisepostDetailActivity;
 import com.yijia.myapplication.R;
 
@@ -22,8 +22,8 @@ import java.util.List;
  * Created by laz on 2016/5/28.
  */
 public class MyRaisePostFragment extends Fragment {
-    List<MyQuestionData> mListpost;
-    MyQueslistviewAdapter mQueslistviewAdapter;
+    List<MyPostData> mListpost;
+    MyPostlistviewAdapter mQueslistviewAdapter;
     ListView mListView;
 
     @Nullable
@@ -32,14 +32,14 @@ public class MyRaisePostFragment extends Fragment {
         initData();
         View view = inflater.inflate(R.layout.myraisepost, null);
         mListView = (ListView) view.findViewById(R.id.listiewmyraisepost);
-        mQueslistviewAdapter = new MyQueslistviewAdapter(mListpost, getContext());
+        mQueslistviewAdapter = new MyPostlistviewAdapter(mListpost, getContext());
         mListView.setAdapter(mQueslistviewAdapter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MyQuestionData myQuestionData = mListpost.get(position);
+                MyPostData myQuestionData = mListpost.get(position);
                 Intent intent = new Intent(getContext(), MyRaisepostDetailActivity.class);
-                intent.putExtra("mypostdetail", myQuestionData);
+
                 startActivity(intent);
             }
         });
@@ -48,11 +48,11 @@ public class MyRaisePostFragment extends Fragment {
 
     private void initData() {
         mListpost=new ArrayList<>();
-        MyQuestionData q1=new MyQuestionData(R.mipmap.user,"呵呵","我提出的帖子帖子帖子帖子帖子帖子1",R.drawable.ques,"2016-01-02");
-        MyQuestionData q2=new MyQuestionData(R.mipmap.user,"呵呵","帖子帖子帖子2",R.drawable.ques,"2016-01-06");
-        MyQuestionData q3=new MyQuestionData(R.mipmap.user,"呵呵","帖子帖子帖子3",R.drawable.ques,"2016-02-02");
-        MyQuestionData q4=new MyQuestionData(R.mipmap.user,"呵呵","帖子帖子帖子4",R.drawable.ques,"2016-02-04");
-        MyQuestionData q5=new MyQuestionData(R.mipmap.user,"呵呵","帖子帖子帖子",R.drawable.ques,"2016-02-14");
+        MyPostData q1=new MyPostData(R.mipmap.user,"呵呵","我提出的帖子帖子帖子帖子帖子帖子1",R.drawable.ques,"2016-01-02");
+        MyPostData q2=new MyPostData(R.mipmap.user,"呵呵","帖子帖子帖子2",R.drawable.ques,"2016-01-06");
+        MyPostData q3=new MyPostData(R.mipmap.user,"呵呵","帖子帖子帖子3",R.drawable.ques,"2016-02-02");
+        MyPostData q4=new MyPostData(R.mipmap.user,"呵呵","帖子帖子帖子4",R.drawable.ques,"2016-02-04");
+        MyPostData q5=new MyPostData(R.mipmap.user,"呵呵","帖子帖子帖子",R.drawable.ques,"2016-02-14");
         mListpost.add(q1);
         mListpost.add(q2);
         mListpost.add(q3);

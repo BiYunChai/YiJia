@@ -5,16 +5,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.yijia.adapter.MyPostAdapter;
-import com.yijia.adapter.MyQuestionAdapter;
 import com.yijia.fragment.MyRaisePostFragment;
-import com.yijia.fragment.MyRaiseQuesFragment;
 import com.yijia.fragment.MyRelyPostFragment;
-import com.yijia.fragment.MyReplyQuesFragment;
-import com.yijia.utils.MyViewPager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +22,7 @@ RadioGroup mRadioGrouppost;
     MyRaisePostFragment mRaisePostFragment;
     MyRelyPostFragment mRelyPostFragment;
     FragmentManager mFragmentManager;
-    MyViewPager mViewPagerPost;
+    ViewPager mViewPagerPost;
     MyPostAdapter mPostAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +33,12 @@ RadioGroup mRadioGrouppost;
         initListener();
     }
     private void initViews() {
-        mViewPagerPost= (MyViewPager) findViewById(R.id.viewpagerpost);
+        mViewPagerPost= (ViewPager) findViewById(R.id.viewpagerpost);
         mRadioGrouppost= (RadioGroup) findViewById(R.id.raiseandrelypost);
     }
     private void initData() {
         mListpostFragment=new ArrayList<>();
-       mRaisePostFragment=new MyRaisePostFragment();
+        mRaisePostFragment=new MyRaisePostFragment();
         mRelyPostFragment=new MyRelyPostFragment();
         mListpostFragment.add(mRaisePostFragment);
         mListpostFragment.add(mRelyPostFragment);
@@ -91,4 +88,7 @@ RadioGroup mRadioGrouppost;
     }
 
 
+    public void backME(View view) {
+        finish();
+    }
 }

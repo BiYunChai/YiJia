@@ -47,19 +47,34 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".AboutUsActivity" />
-        <activity android:name=".MyStoreActivity" />
+        <activity android:name=".MyCollActivity" />
         <activity android:name=".ForgetPasswordActivity" />
         <activity android:name=".MyPostActivity" />
-        <activity android:name=".MyquestionActivity" />
         <activity android:name=".MyRaisepostDetailActivity" />
-        <activity android:name=".MyRaisequesDetailActivity" />
+
         <activity android:name=".MyReplypostDetailActivity" />
-        <activity android:name=".MyReplyquesDetailActivity" />
+
         <activity android:name=".PersonalInformationActivity" />
         <activity android:name=".PicDetailActivity" />
         <activity android:name=".LookGoodsActivity" />
         <activity android:name=".GoodsDetaileActivity" />
         <activity android:name=".BusniessActivity"></activity>
+        <activity android:name=".CollTeamActivity">
+        </activity>
+        <activity android:name=".CollStyleActivity">
+        </activity>
+        <activity android:name=".CollMaterialActivity">
+        </activity>
+        <activity android:name=".CollLikeActivity">
+        </activity>
+        <activity android:name=".CollPostActivity">
+        </activity>
+        <activity android:name=".CollRecoDetailActivity">
+        </activity>
+        <activity android:name="com.yijia.fragment.CollCompDetailActivity">
+        </activity>
+        <activity android:name=".BuildStageRateActivity">
+        </activity>
     </application>
 
 </manifest>

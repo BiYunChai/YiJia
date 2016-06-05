@@ -52,4 +52,8 @@ public class MyBuildActivity extends AppCompatActivity {
         mList.add(b5);
         mList.add(b6);
     }
+
+    public void backME(View view) {
+        finish();
+    }
 }

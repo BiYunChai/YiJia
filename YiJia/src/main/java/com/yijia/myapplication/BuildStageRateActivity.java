@@ -4,12 +4,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-public class MyReplyquesDetailActivity extends AppCompatActivity {
+public class BuildStageRateActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.my_replyques_detail);
-        Toast.makeText(MyReplyquesDetailActivity.this, "这是我回复的问题详情页", Toast.LENGTH_SHORT).show();
+        setContentView(R.layout.activity_build_stage_rate);
+        Toast.makeText(BuildStageRateActivity.this, "这是阶段评分界面", Toast.LENGTH_SHORT).show();
     }
 }

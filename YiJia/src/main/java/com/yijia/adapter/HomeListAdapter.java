@@ -54,8 +54,6 @@ public class HomeListAdapter extends BaseAdapter {
         TextView designer;
         TextView rectime;
         ImageView pic;
-
-
     }
 
     @Override

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CollLikeActivity">
     <!--top-->
     <LinearLayout
         style="@style/topstyle"
@@ -13,28 +16,24 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:src="@mipmap/back"
-            android:onClick="backME"
-           />
+            android:onClick="back"
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:layout_marginTop="8dp"
             android:textColor="#ffffff"
-            android:text="我的工地"/>
+            android:text="收藏的推荐"/>
     </LinearLayout>
-    <!-- 工地列表-->
-    <LinearLayout
+       <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="12"
-        android:orientation="vertical"
-        android:background="#ffffff">
-        <ListView
-            android:id="@+id/listview_build"
+        android:layout_weight="12">
+           <ListView
+               android:id="@+id/lv_collreco"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </ListView>
-    </LinearLayout>
+            android:layout_height="match_parent"></ListView>
+        </LinearLayout>
 
 </LinearLayout>

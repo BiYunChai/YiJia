@@ -5,23 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.yijia.myapplication.MyStoreActivity">
+    tools:context=".MyCollActivity">
     <!--top-->
     <LinearLayout
-        style="@style/topstyle">
+        style="@style/topstyle"
+        android:padding="3dp">
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:src="@mipmap/back"
+            android:onClick="backme"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginTop="8dp"
+            android:textColor="#ffffff"
+            android:text="我的收藏"/>
     </LinearLayout>
     <!--用户头像-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
+        android:layout_weight="5"
         android:background="@color/colorPrimary">
     </LinearLayout>
     <!--收藏-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="6"
+        android:layout_weight="7"
         android:orientation="vertical">
         <LinearLayout
             android:id="@+id/storeteam"
@@ -55,41 +70,20 @@
             style="@style/melinnear">
             <TextView
                 style="@style/scoretext"
-                android:text="猜你喜欢"/>
+                android:text="收藏套图"/>
         </LinearLayout>
         <LinearLayout
             style="@style/settingunderline"/>
-        <LinearLayout
-            android:id="@+id/storeques"
-            style="@style/melinnear">
-            <TextView
-                style="@style/scoretext"
-                android:text="收藏的问题"/>
-        </LinearLayout>
-        <LinearLayout
-            style="@style/settingunderline"/>
+
         <LinearLayout
             android:id="@+id/storepost"
             style="@style/melinnear">
             <TextView
                 style="@style/scoretext"
-                android:text="收藏的帖子"/>
+                android:text="收藏帖子"/>
         </LinearLayout>
         <LinearLayout
             style="@style/settingunderline"/>
-        <LinearLayout
-            android:id="@+id/storeinspire"
-            style="@style/melinnear">
-            <TextView
-                style="@style/scoretext"
-                android:text="灵感"/>
-        </LinearLayout>
-        <LinearLayout
-            style="@style/settingunderline"/>
+
     </LinearLayout>
-
-
-
-
-
 </LinearLayout>

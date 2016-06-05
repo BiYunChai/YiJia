@@ -34,7 +34,7 @@
         android:id="@+id/questiontext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="这是我提出的问题这是我提出的问题这是我提出的问题这是我提出的问题"
+        android:text="这是我提出的帖子这是我提出的帖子这是我提出的帖子这是我提出的帖子"
         android:layout_centerInParent="true"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"

@@ -6,16 +6,27 @@
              tools:context=".SettingActivity">
     <!--top-->
     <LinearLayout
-        android:background="#56abe4"
-       android:layout_width="match_parent"
-        android:layout_weight="1"
-       android:layout_height="0dp"
-       android:orientation="horizontal">
+       style="@style/topstyle"
+        android:padding="3dp">
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:src="@mipmap/back"
+            android:onClick="backme"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginTop="8dp"
+            android:textColor="#ffffff"
+            android:text="设置"/>
     </LinearLayout>
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="0dp"
-    android:layout_weight="4"
+    android:layout_weight="6"
     android:orientation="vertical">
     <!--个人资料-->
     <LinearLayout
@@ -103,24 +114,22 @@
             style="@style/settingbutton"/>
     </LinearLayout>
 </LinearLayout>
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5">
+        android:layout_weight="6"
+        android:layout_gravity="bottom">
         <!--退出当前帐号-->
-        <TextView
-            android:id="@+id/wuyiyi"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:background="#ffffff"/>
-<Button
+
+   <Button
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_below="@+id/wuyiyi"
     android:text="退出当前账户"
     android:textSize="18sp"
     android:background="@color/topColor"
-    android:textColor="#ffffff"/>
+    android:textColor="#ffffff"
+    android:layout_gravity="bottom"/>
 
-    </RelativeLayout>
+    </LinearLayout>
 </LinearLayout>

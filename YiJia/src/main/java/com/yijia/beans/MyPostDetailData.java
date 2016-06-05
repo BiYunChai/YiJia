@@ -8,21 +8,21 @@ import java.io.Serializable;
 /**
  * Created by laz on 2016/5/29.
  */
-public class MyQuesDetailData implements Serializable {
+public class MyPostDetailData implements Serializable {
     private int userpic;
     private String username;
     private String date;
-    private String quescontent;
-    private int quespic;
+    private String postcontent;
+    private int postpic;
     private int zan;
     private int comment;
 
-    public MyQuesDetailData(int userpic, String username, String date, String quescontent, int quespic, int zan, int comment) {
+    public MyPostDetailData(int userpic, String username, String date, String postcontent, int postpic, int zan, int comment) {
         this.userpic = userpic;
         this.username = username;
         this.date = date;
-        this.quescontent = quescontent;
-        this.quespic = quespic;
+        this.postcontent = postcontent;
+        this.postpic = postpic;
         this.zan = zan;
         this.comment = comment;
     }
@@ -51,20 +51,20 @@ public class MyQuesDetailData implements Serializable {
         this.date = date;
     }
 
-    public String getQuescontent() {
-        return quescontent;
+    public String getPostcontent() {
+        return postcontent;
     }
 
-    public void setQuescontent(String quescontent) {
-        this.quescontent = quescontent;
+    public void setPostcontent(String postcontent) {
+        this.postcontent = postcontent;
     }
 
-    public int getQuespic() {
-        return quespic;
+    public int getPostpic() {
+        return postpic;
     }
 
-    public void setQuespic(int quespic) {
-        this.quespic = quespic;
+    public void setPostpic(int postpic) {
+        this.postpic = postpic;
     }
 
     public int getZan() {

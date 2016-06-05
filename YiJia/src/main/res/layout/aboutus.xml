@@ -13,28 +13,41 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:src="@mipmap/back"
-            android:onClick="backME"
-           />
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:layout_marginTop="8dp"
             android:textColor="#ffffff"
-            android:text="我的工地"/>
+            android:text="关于"/>
     </LinearLayout>
-    <!-- 工地列表-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="12"
-        android:orientation="vertical"
-        android:background="#ffffff">
-        <ListView
-            android:id="@+id/listview_build"
+        android:orientation="vertical">
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </ListView>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="宜 家"
+            android:padding="10dp"
+            android:textColor="@color/textUp"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/aboutus"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="11"
+            android:text="@string/aboutus"
+            android:lineSpacingExtra="2dp"
+            android:lineSpacingMultiplier="1.5"
+            android:textColor="@color/textUp"
+            android:textSize="18sp"/>
+
+
     </LinearLayout>
 
 </LinearLayout>

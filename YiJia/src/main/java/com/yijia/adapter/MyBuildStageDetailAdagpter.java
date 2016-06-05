@@ -8,7 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.yijia.beans.MyQuestionData;
+import com.yijia.beans.MyBuildStageDetail;
+import com.yijia.beans.MyPostData;
 import com.yijia.myapplication.R;
 
 import java.util.List;
@@ -16,12 +17,12 @@ import java.util.List;
 /**
  * Created by laz on 2016/5/27.
  */
-public class MyQueslistviewAdapter extends BaseAdapter {
-    List<MyQuestionData> mList;
+public class MyBuildStageDetailAdagpter extends BaseAdapter {
+    List<MyBuildStageDetail> mList;
     Context mContext;
     LayoutInflater mInflater;
 
-    public MyQueslistviewAdapter(List<MyQuestionData> list, Context context) {
+    public MyBuildStageDetailAdagpter(List<MyBuildStageDetail> list, Context context) {
         mList = list;
         mContext = context;
         mInflater=LayoutInflater.from(mContext);
@@ -42,10 +43,10 @@ public class MyQueslistviewAdapter extends BaseAdapter {
         return position;
     }
     class ViewHolder{
-        ImageView usertouxiang;
-        TextView username;
-        TextView questextview;
-        TextView datetextview;
+        TextView stagename;
+        TextView stagedetailinfo;
+        TextView stagestartdate;
+        ImageView ifcomplete;
     }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -53,24 +54,24 @@ public class MyQueslistviewAdapter extends BaseAdapter {
         if (convertView==null){
             //说明是第一次绘制满屏
             //找到每一行的布局
-            convertView=mInflater.inflate(R.layout.itemquestion,null);
+            convertView=mInflater.inflate(R.layout.build_stage_item,null);
             viewHolder=new ViewHolder();
             //初始化当前行布局中的所有控件
-            viewHolder.usertouxiang= (ImageView) convertView.findViewById(R.id.usertouxiang);
-            viewHolder.username= (TextView) convertView.findViewById(R.id.username);
-            viewHolder.questextview= (TextView) convertView.findViewById(R.id.quescontent);
-            viewHolder.datetextview= (TextView) convertView.findViewById(R.id.quesdate);
+            viewHolder.stagename= (TextView) convertView.findViewById(R.id.build_stagename);
+            viewHolder.stagedetailinfo= (TextView) convertView.findViewById(R.id.stage_detailinfo);
+            viewHolder.stagestartdate= (TextView) convertView.findViewById(R.id.stagestartdate);
+            viewHolder.ifcomplete= (ImageView) convertView.findViewById(R.id.ifcomplete);
             //把当前的控件缓存到布局视图中
             convertView.setTag(viewHolder);
         }else {
             //说明开始上下滑动，后面的所有行的布局采用第一次绘制时的缓存布局
             viewHolder= (ViewHolder) convertView.getTag();
         }
-        MyQuestionData myQuestionData=mList.get(position);
-        viewHolder.usertouxiang.setImageResource(myQuestionData.getUserpic());
-        viewHolder.username.setText(myQuestionData.getUsername());
-        viewHolder.questextview.setText(myQuestionData.getQuestext());
-        viewHolder.datetextview.setText(myQuestionData.getDate());
+        MyBuildStageDetail myBuildStageDetail=mList.get(position);
+        viewHolder.stagename.setText(myBuildStageDetail.getBuild_stagename());
+        viewHolder.stagedetailinfo.setText(myBuildStageDetail.getStage_detailinfo());
+        viewHolder.stagestartdate.setText(myBuildStageDetail.getStagestartdate());
+        viewHolder.ifcomplete.setImageResource(myBuildStageDetail.getIfcomplete());
         return convertView;
     }
 }

@@ -51,23 +51,7 @@
         </LinearLayout>
         <LinearLayout
             style="@style/underline"/>
-        <!--我的问题-->
-        <LinearLayout
-            android:id="@+id/question"
-            style="@style/melinnear"
-            android:background="@drawable/layout_selecter">
-            <ImageView
-                style="@style/meimaview"
-                android:src="@mipmap/myquestion"
-                />
-            <TextView
-                style="@style/metext"
-                android:text="问题"/>
-            <ImageView
-                style="@style/meimabutton"/>
-        </LinearLayout>
-        <LinearLayout
-            style="@style/underline"/>
+
         <!--我的帖子-->
         <LinearLayout
             android:id="@+id/post"
@@ -118,9 +102,17 @@
                 style="@style/meimabutton"/>
 
         </LinearLayout>
+        <LinearLayout
+            style="@style/underline"/>
 
-
-
+        <LinearLayout
+            style="@style/melinnear"
+            android:background="@drawable/layout_selecter">
+        </LinearLayout>
+        <LinearLayout
+            style="@style/melinnear"
+            android:background="@drawable/layout_selecter">
+        </LinearLayout>
 
     </LinearLayout>
 

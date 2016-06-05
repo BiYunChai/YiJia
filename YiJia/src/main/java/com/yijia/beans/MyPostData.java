@@ -6,16 +6,18 @@ import java.util.Date;
 /**
  * Created by laz on 2016/5/27.
  */
-public class MyQuestionData implements Serializable {
+public class MyPostData implements Serializable {
     private int userpic;
     private String username;
-    private String questext;
+    private String postcontent;
+    private int postpic;
     private String mDate;
 
-    public MyQuestionData(int userpic, String username, String questext, int quespic, String date) {
+    public MyPostData(int userpic, String username, String postcontent, int postpic, String date) {
         this.userpic = userpic;
         this.username = username;
-        this.questext = questext;
+        this.postcontent = postcontent;
+        this.postpic = postpic;
         mDate = date;
     }
 
@@ -35,12 +37,20 @@ public class MyQuestionData implements Serializable {
         this.username = username;
     }
 
-    public String getQuestext() {
-        return questext;
+    public String getPostcontent() {
+        return postcontent;
     }
 
-    public void setQuestext(String questext) {
-        this.questext = questext;
+    public void setPostcontent(String postcontent) {
+        this.postcontent = postcontent;
+    }
+
+    public int getPostpic() {
+        return postpic;
+    }
+
+    public void setPostpic(int postpic) {
+        this.postpic = postpic;
     }
 
     public String getDate() {

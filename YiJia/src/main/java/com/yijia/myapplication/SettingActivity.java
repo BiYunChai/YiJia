@@ -49,4 +49,7 @@ LinearLayout personalData,share,wehcatcode,aboutus,cleancache;
     }
 
 
+    public void backme(View view) {
+        finish();
+    }
 }
