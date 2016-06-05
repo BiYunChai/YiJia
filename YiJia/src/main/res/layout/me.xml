@@ -51,7 +51,6 @@
         </LinearLayout>
         <LinearLayout
             style="@style/underline"/>
-
         <!--我的帖子-->
         <LinearLayout
             android:id="@+id/post"
