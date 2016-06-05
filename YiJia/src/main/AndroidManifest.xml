@@ -15,6 +15,10 @@
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity android:name=".Guide">
+        </activity>
+        <activity android:name=".WelcomeAty">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,33 +40,26 @@
         <activity android:name=".Cal_clActivity" />
         <activity android:name=".Cal_cldetailActivity" />
         <activity android:name=".Cal_bzActivity" />
-        <activity android:name=".Cal_bzdetailActivity"></activity>
-        <activity android:name=".MyBuildActivity">
-        </activity>
-        <activity android:name=".BuildStageActivity">
-        </activity>
-        <activity android:name=".LoginActivity">
-        </activity>
-        <activity android:name=".RegisterActivity">
-        </activity>
-        <activity android:name=".SettingActivity">
-
-        </activity>
-        <activity android:name=".AboutUsActivity">
-        </activity>
-        <activity android:name=".MyStoreActivity">
-
-        </activity>
-        <activity android:name=".ForgetPasswordActivity"/>
-        <activity android:name=".MyPostActivity"/>
-        <activity android:name=".MyquestionActivity"/>
-        <activity android:name=".MyRaisepostDetailActivity"/>
-        <activity android:name=".MyRaisequesDetailActivity"/>
-        <activity android:name=".MyReplypostDetailActivity"/>
-        <activity android:name=".MyReplyquesDetailActivity"/>
-        <activity android:name=".PersonalInformationActivity"/>
-
-
+        <activity android:name=".Cal_bzdetailActivity" />
+        <activity android:name=".MyBuildActivity" />
+        <activity android:name=".BuildStageActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".AboutUsActivity" />
+        <activity android:name=".MyStoreActivity" />
+        <activity android:name=".ForgetPasswordActivity" />
+        <activity android:name=".MyPostActivity" />
+        <activity android:name=".MyquestionActivity" />
+        <activity android:name=".MyRaisepostDetailActivity" />
+        <activity android:name=".MyRaisequesDetailActivity" />
+        <activity android:name=".MyReplypostDetailActivity" />
+        <activity android:name=".MyReplyquesDetailActivity" />
+        <activity android:name=".PersonalInformationActivity" />
+        <activity android:name=".PicDetailActivity" />
+        <activity android:name=".LookGoodsActivity" />
+        <activity android:name=".GoodsDetaileActivity" />
+        <activity android:name=".BusniessActivity"></activity>
     </application>
 
 </manifest>

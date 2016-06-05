@@ -9,17 +9,10 @@
         style="@style/topstyle">
         <ImageView
             android:id="@+id/back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:src="@mipmap/back"
+           style="@style/detailtopback"
             android:onClick="backcalcuator"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_marginTop="8dp"
-            android:textColor="#ffffff"
+            style="@style/detailtoptext"
             android:text="计算窗帘价格"/>
 
     </LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <RadioGroup
+        android:id="@+id/companytop"
+        style="@style/companytop"
+        android:background="@color/bottomColor"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+        <RadioButton
+            android:id="@+id/samecity"
+            style="@style/companyradio"
+            android:textSize="20sp"
+            android:checked="true"
+            android:text="同城"
+            />
+        <RadioButton
+            android:id="@+id/score"
+            style="@style/radio"
+            android:textSize="20sp"
+            android:text="评分"/>
+
+
+    </RadioGroup>
+
+
+</merge>

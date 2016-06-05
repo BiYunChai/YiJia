@@ -7,20 +7,31 @@
     android:orientation="vertical"
     tools:context="com.yijia.myapplication.MyPostActivity">
     <LinearLayout
-        android:background="#56abe4"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+       style="@style/topstyle">
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:src="@mipmap/back"
+            android:onClick="backME"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginTop="8dp"
+            android:text="我的帖子"
+            android:textColor="#ffffff"/>
     </LinearLayout>
     <include
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         layout="@layout/merge_post"/>
-    <android.support.v4.view.ViewPager
+    <com.yijia.utils.MyViewPager
         android:id="@+id/viewpagerpost"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10">
-    </android.support.v4.view.ViewPager>
+    </com.yijia.utils.MyViewPager>
 </LinearLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:scaleType="fitXY"
+
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="5dp">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textSize="18sp"
+            android:textColor="#000"
+
+            android:text="老屋新生演绎混搭"
+
+            />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+
+            android:id="@+id/decription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="老房子就如一本典籍藏书，随着岁月的流逝，累积丰厚的篇章扉页，仿佛有说故事的能力，让人为之着迷。"
+            />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

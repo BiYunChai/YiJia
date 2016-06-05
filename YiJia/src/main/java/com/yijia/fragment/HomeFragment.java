@@ -20,6 +20,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -36,11 +37,13 @@ import com.yijia.myapplication.CalcuatorActivity;
 import com.yijia.myapplication.CalendarActivity;
 import com.yijia.myapplication.CompanyActivity;
 import com.yijia.myapplication.DesignApplyActivity;
+import com.yijia.myapplication.PicDetailActivity;
 import com.yijia.myapplication.R;
 import com.yijia.myapplication.SafeActivity;
 import com.yijia.myapplication.ServiceActivity;
 import com.yijia.myapplication.ThemeActivity;
 import com.yijia.utils.HttpUrl;
+import com.yijia.utils.ImgURL;
 
 
 import org.xutils.common.Callback;
@@ -66,6 +69,8 @@ public class HomeFragment extends Fragment{
 
     private static final String TAG="homefragment出错了。。。";
     private static final String TAG2 = "刷新失败";
+    //listview与ArrayList相差1，addheader后差2
+    private static final int DIFFER = 2;
 
     private ViewPager mViewPaper;
     private List<ImageView> images;
@@ -74,13 +79,8 @@ public class HomeFragment extends Fragment{
     //记录上一次点的位置
     private int oldPosition = 0;
     //存放图片的id
-    private int[] imageIds = new int[]{
-            R.drawable.img1,
-            R.drawable.img2,
-            R.drawable.img3,
-            R.drawable.img4,
-            R.drawable.img5
-    };
+    private String[] imageIds = new String[]{ImgURL.ADONE,ImgURL.ADTWO,ImgURL.ADTHREE,ImgURL.ADFOUR,ImgURL.ADFIVE};
+
     private ViewPagerAdater adater;
     private ScheduledExecutorService scheduledExecutorService;
     /**
@@ -88,7 +88,7 @@ public class HomeFragment extends Fragment{
      */
     private String homelisturl=HttpUrl.HOME_LIST_URL;
     List<Recommend> mRecoList=new ArrayList<>();
-    List<Recommend> mLoadListData;
+    //List<Recommend> mLoadListData;
     HomeListAdapter mHomeListAdapter;
     PullToRefreshListView mListView;
 
@@ -148,10 +148,16 @@ public class HomeFragment extends Fragment{
     private void initlunbopicData(View view) {
         //显示的图片
         images = new ArrayList<>();
+
+
         for(int i = 0; i < imageIds.length; i++){
             ImageView imageView = new ImageView(getContext());
-            imageView.setBackgroundResource(imageIds[i]);
-            images.add(imageView);
+            Glide.with(getContext())
+                    .load(imageIds[i])
+                    .thumbnail(0.5f)
+                    .into(imageView);
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+           images.add(imageView);
         }
         //显示的小点
         dots = new ArrayList<>();
@@ -372,16 +378,19 @@ public class HomeFragment extends Fragment{
                 //访问网络成功
                // Gson gson=new Gson();
                 Gson gson=new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
+                //
+
                 Type type=new TypeToken<List<Recommend>>(){}.getType();
                 List<Recommend> recoList;
                 //接受网络数据
                 recoList=gson.fromJson(result.toString(),type);
                 for (Recommend recommend :recoList) {
+                    int id=recommend.getId();
                     String imgaddress=recommend.getImgaddress();
                     String topic=recommend.getTopic();
                     String designer=recommend.getDesigner();
                     Date rectime=recommend.getRectime();
-                    Recommend reco=new Recommend(imgaddress,topic,designer,rectime);
+                    Recommend reco=new Recommend(id,imgaddress,topic,designer,rectime);
                     mRecoList.add(reco);
                 }
 
@@ -412,7 +421,12 @@ public class HomeFragment extends Fragment{
                 mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Toast.makeText(getContext(),"单击了"+(position)+"行",Toast.LENGTH_LONG).show();
+                        //测试
+                       /* Recommend recommend=mRecoList.get(position-DIFFER);
+                        Log.e("listview下标",recommend.getId()+"");
+                        Toast.makeText(getContext(),"单击了数据库中pic_id为"+recommend.getId()+"的数据",Toast.LENGTH_LONG).show();*/
+                        Intent intent=new Intent(getActivity(), PicDetailActivity.class);
+                        startActivity(intent);
                     }
                 });
             }
@@ -528,21 +542,21 @@ public class HomeFragment extends Fragment{
             public void onSuccess(String result) {
                 // Gson gson=new Gson();
                 Gson gson=new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
+
                 Type type=new TypeToken<List<Recommend>>(){}.getType();
                 List<Recommend> recoList;
                 recoList=gson.fromJson(result.toString(),type);
                 for (Recommend recommend :recoList) {
+                    int id=recommend.getId();
                     String imgaddress=recommend.getImgaddress();
                     String topic=recommend.getTopic();
                     String designer=recommend.getDesigner();
                     Date rectime=recommend.getRectime();
-                    Recommend reco=new Recommend(imgaddress,topic+"新",designer,rectime);
+                    Recommend reco=new Recommend(id,imgaddress,topic+"新",designer,rectime);
                     mRecoList.add(reco);
                 }
 
-                //加载数据时不需要重新绑定适配器
-               /* mHomeListAdapter=new HomeListAdapter(getContext(),mRecoList);
-                mListView.setAdapter(mHomeListAdapter);*/
+
 
 
             }
@@ -602,6 +616,7 @@ public class HomeFragment extends Fragment{
     static class LoadDataAsyncTask extends AsyncTask<Void, Void, String> {//定义返回值的类型
         //后台处理
         private HomeFragment homeFragment;
+        //
 
         public LoadDataAsyncTask(HomeFragment homeFragment) {
             this.homeFragment = homeFragment;
@@ -624,8 +639,12 @@ public class HomeFragment extends Fragment{
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             if (s.equals("success")) {
+                //
+
                 homeFragment.mHomeListAdapter.notifyDataSetChanged();//通知数据集改变,界面刷新
+
                 homeFragment.mListView.onRefreshComplete();//表示刷新完成
+
             }
         }
     }

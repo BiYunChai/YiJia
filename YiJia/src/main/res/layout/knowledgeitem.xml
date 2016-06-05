@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="30dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textSize="20sp"
+            android:textColor="@color/textUp"
+            android:text="青花饰品 家居软装中一只会说话的精灵"/>
+    </LinearLayout>
+    <LinearLayout
+
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:lines="3"
+            android:ellipsize="end"
+            android:text="青花饰品是当前流行的时尚元素，在国际时尚界，青花饰品一直都是高贵与品位的象征，像一些小挂件、杯具、花瓶等，在我们的家居装饰中也可以作为很好的软装饰品。它并不奢华，但从里而外透露着一种气度，美丽自认而然就显示出来。"/>
+
+    </LinearLayout
+>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"
+
+        android:paddingRight="5dp"
+        >
+         <TextView
+             android:id="@+id/time"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="2016-05-05"
+             android:gravity="right"/>
+    </LinearLayout>
+</LinearLayout>

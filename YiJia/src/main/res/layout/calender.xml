@@ -8,7 +8,7 @@
     >
     <LinearLayout
         style="@style/topstyle"
-        android:padding="3dp"
+
 
         >
         <ImageView
@@ -23,7 +23,8 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:layout_marginTop="8dp"
-            android:text="装修日历"/>
+            android:text="装修日历"
+            android:textColor="#ffffff"/>
 
     </LinearLayout>
     <LinearLayout

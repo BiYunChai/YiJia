@@ -9,6 +9,7 @@ import java.util.List;
 
 /**
  * Created by Administrator on 2016/5/25.
+ * 首页轮播图适配器
  */
 public class ViewPagerAdater extends PagerAdapter {
     private List<ImageView> images;

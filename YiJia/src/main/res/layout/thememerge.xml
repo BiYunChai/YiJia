@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <RadioGroup
+        android:id="@+id/themeradiogroup"
+        style="@style/companytop"
+        android:background="@color/bottomColor"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+        <RadioButton
+            android:id="@+id/type"
+            style="@style/companyradio"
+            android:textSize="20sp"
+            android:checked="true"
+            android:text="风格"
+            />
+        <RadioButton
+            android:id="@+id/house"
+            style="@style/radio"
+            android:textSize="20sp"
+            android:text="户型"/>
+
+
+    </RadioGroup>
+
+
+</merge>

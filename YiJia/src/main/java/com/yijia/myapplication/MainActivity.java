@@ -17,6 +17,7 @@ import com.yijia.fragment.ForumFragment;
 import com.yijia.fragment.HomeFragment;
 import com.yijia.fragment.LookFragment;
 import com.yijia.fragment.MeFragment;
+import com.yijia.utils.MyViewPager;
 
 
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     RadioGroup mRadioGroup;
-    ViewPager mViewPager;
+    MyViewPager mViewPager;
 
 
     List<Fragment> mList;
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void initViews() {
-        mViewPager= (ViewPager) findViewById(R.id.middle);
+        mViewPager= (MyViewPager) findViewById(R.id.middle);
         mRadioGroup= (RadioGroup) findViewById(R.id.bottom);
     }
 
@@ -104,21 +105,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    /*@Override
-    public boolean onTouchEvent(MotionEvent event) {
-        switch (event.getAction()) {
-            case MotionEvent.ACTION_MOVE:
-                mViewPager.requestDisallowInterceptTouchEvent(true);
-                break;
-            case MotionEvent.ACTION_UP:
-                mViewPager.requestDisallowInterceptTouchEvent(true);
-                break;
-            case MotionEvent.ACTION_CANCEL:
-                mViewPager.requestDisallowInterceptTouchEvent(false);
-                break;
-        }
 
-    }*/
 
     private void resetViewPager(int checkedId) {
 

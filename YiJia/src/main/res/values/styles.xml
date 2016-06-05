@@ -12,6 +12,19 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+    <style name="companytop">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="companyradio">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@drawable/textcolor</item>
+        <item name="android:button">@null</item>
+    </style>
     <!--底部导航-->
     <style name="radio">
         <item name="android:layout_width">0dp</item>
@@ -161,4 +174,22 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">40dp</item>
     </style>
+    <!--顶部返回按钮-->
+    <style name="detailtopback">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:src">@mipmap/back</item>
+
+    </style>
+    <!--顶部文字-->
+    <style name="detailtoptext">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">9dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/write</item>
+
+    </style>
+
 </resources>

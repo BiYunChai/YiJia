@@ -7,46 +7,57 @@ import java.io.Serializable;
  * Created by Administrator on 2016/5/25.
  */
 public class TestData implements Serializable {
+    private int id;
     private int imgaddress ;
-    private String topic;
-    private String designer;
-    private String rectime;
-    public TestData( int imgaddress, String topic,
-                      String designer, String rectime) {
-        super();
+    private String Companyname;
+    private float score;
+    private String comtel;
 
+    public TestData(int id, int imgaddress, String companyname, float score, String comtel) {
+        this.id = id;
         this.imgaddress = imgaddress;
-        this.topic = topic;
-        this.designer = designer;
-        this.rectime = rectime;
+        Companyname = companyname;
+        this.score = score;
+        this.comtel = comtel;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getImgaddress() {
         return imgaddress;
     }
+
     public void setImgaddress(int imgaddress) {
         this.imgaddress = imgaddress;
     }
-    public String getTopic() {
-        return topic;
-    }
-    public void setTopic(String topic) {
-        this.topic = topic;
-    }
-    public String getDesigner() {
-        return designer;
-    }
-    public void setDesigner(String designer) {
-        this.designer = designer;
-    }
-    public String getRectime() {
-        return rectime;
-    }
-    public void setRectime(String rectime) {
-        this.rectime = rectime;
+
+    public String getCompanyname() {
+        return Companyname;
     }
 
+    public void setCompanyname(String companyname) {
+        Companyname = companyname;
+    }
 
+    public float getScore() {
+        return score;
+    }
 
+    public void setScore(float score) {
+        this.score = score;
+    }
+
+    public String getComtel() {
+        return comtel;
+    }
+
+    public void setComtel(String comtel) {
+        this.comtel = comtel;
+    }
 }

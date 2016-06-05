@@ -14,6 +14,7 @@ import com.yijia.fragment.MyRaisePostFragment;
 import com.yijia.fragment.MyRaiseQuesFragment;
 import com.yijia.fragment.MyRelyPostFragment;
 import com.yijia.fragment.MyReplyQuesFragment;
+import com.yijia.utils.MyViewPager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +25,7 @@ RadioGroup mRadioGrouppost;
     MyRaisePostFragment mRaisePostFragment;
     MyRelyPostFragment mRelyPostFragment;
     FragmentManager mFragmentManager;
-    ViewPager mViewPagerPost;
+    MyViewPager mViewPagerPost;
     MyPostAdapter mPostAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ RadioGroup mRadioGrouppost;
         initListener();
     }
     private void initViews() {
-        mViewPagerPost= (ViewPager) findViewById(R.id.viewpagerpost);
+        mViewPagerPost= (MyViewPager) findViewById(R.id.viewpagerpost);
         mRadioGrouppost= (RadioGroup) findViewById(R.id.raiseandrelypost);
     }
     private void initData() {

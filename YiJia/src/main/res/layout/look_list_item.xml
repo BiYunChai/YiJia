@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="10dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingBottom="10dp">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/goodspic"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="4"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:gravity="center"
+            android:layout_marginTop="0dp"
+            android:id="@+id/goodsname"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:textSize="18sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="bottom">
+            <TextView
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent"
+                android:textSize="18sp"
+                android:text="价格:"/>
+            <TextView
+                android:gravity="center_vertical"
+                android:id="@+id/goodsprice"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="match_parent"
+                android:text="168.00"
+                android:textSize="20sp"
+                android:textColor="@color/price"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

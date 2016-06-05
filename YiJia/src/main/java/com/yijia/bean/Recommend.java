@@ -9,14 +9,14 @@ import java.sql.Date;
 public class Recommend implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    private int pic_id;
     private String imgaddress ;
     private String topic;
     private String designer;
     private Date rectime;
-    public Recommend( String imgaddress, String topic, String designer, Date rectime) {
+    public Recommend( int pic_id,String imgaddress, String topic, String designer, Date rectime) {
         super();
-
+        this.pic_id=pic_id;
         this.imgaddress = imgaddress;
         this.topic = topic;
         this.designer = designer;
@@ -24,6 +24,13 @@ public class Recommend implements Serializable {
 
     }
 
+    public int getId() {
+        return pic_id;
+    }
+
+    public void setId(int id) {
+        this.pic_id = id;
+    }
 
     public String getImgaddress() {
         return imgaddress;

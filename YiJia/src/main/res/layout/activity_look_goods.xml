@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LookGoodsActivity"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        style="@style/topstyle"
+        >
+        <ImageView
+            android:id="@+id/back"
+            style="@style/detailtopback"
+            android:onClick="backlook"/>
+        <TextView
+            style="@style/detailtoptext"
+            android:text="商品信息"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="12"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/look_goodinfo_pic"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+
+            android:scaleType="fitXY"/>
+        <TextView
+            android:id="@+id/gooddescription"
+            android:lines="2"
+            android:ellipsize="end"
+            android:textSize="18sp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:textColor="@color/textUp"
+            android:text="飞利浦灯饰 现代简约 客厅卧室水晶吸顶灯 免费送货 上门安装"/>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <ImageView
+                android:gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/price"
+                />
+            <TextView
+                android:id="@+id/good_price"
+                android:gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:textColor="@color/price"
+                android:text="288.00"
+                android:textSize="30sp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <TextView
+                android:gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="已销售"
+                />
+            <TextView
+                android:gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+
+                android:text="138件"
+                android:textSize="18sp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray">
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                android:onClick="gooddetail">
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:textSize="20sp"
+                    android:textColor="@color/textUp"
+                    android:text="商品详情"
+                    android:gravity="center_vertical"/>
+                <ImageView
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/next"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray">
+
+        </LinearLayout>
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:onClick="busniessdetail"
+                >
+            <TextView
+                android:paddingLeft="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:textColor="@color/textUp"
+                android:text="商家信息"
+                android:gravity="center_vertical"/>
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/next"
+                />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

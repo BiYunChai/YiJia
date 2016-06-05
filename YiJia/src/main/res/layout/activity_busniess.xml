@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    tools:context="com.yijia.myapplication.BusniessActivity"
+    android:orientation="vertical">
+    <LinearLayout
+        style="@style/topstyle"
+        >
+        <ImageView
+            android:id="@+id/back"
+            style="@style/detailtopback"
+            android:onClick="backlook"/>
+        <TextView
+            style="@style/detailtoptext"
+            android:text="商家详情"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="12">
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+            android:id="@+id/busniesslistview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            ptr:ptrDrawable="@drawable/default_ptr_flip"
+            ptr:ptrAnimationStyle="flip"
+            />
+    </LinearLayout>
+
+
+
+</LinearLayout>
