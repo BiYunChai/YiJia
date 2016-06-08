@@ -13,23 +13,23 @@ import com.yijia.beans.MyCollRecData;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CollLikeActivity extends AppCompatActivity {
+public class CollRecommentActivity extends AppCompatActivity {
 List<MyCollRecData> mList;
     MyCollRecoAdapter mCollRecoAdapter;
     ListView mListView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.coll_like);
+        setContentView(R.layout.coll_recomment);
         initData();
         initViews();
-        mCollRecoAdapter=new MyCollRecoAdapter(mList,CollLikeActivity.this);
+        mCollRecoAdapter=new MyCollRecoAdapter(mList,CollRecommentActivity.this);
         mListView.setAdapter(mCollRecoAdapter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 MyCollRecData myCollRecData=mList.get(position);
-                Intent intent=new Intent(CollLikeActivity.this,CollRecoDetailActivity.class);
+                Intent intent=new Intent(CollRecommentActivity.this,CollRecoDetailActivity.class);
                 intent.putExtra("CollRecoDetail",myCollRecData);
                 startActivity(intent);
             }
@@ -37,12 +37,12 @@ List<MyCollRecData> mList;
     }
     private void initData() {
         mList=new ArrayList<>();
-        MyCollRecData r1=new MyCollRecData(R.drawable.coll_recommend,"主题一主题一主题一主题一主题一","2016-06-01");
-        MyCollRecData r2=new MyCollRecData(R.drawable.coll_recommend,"主题二","2016-06-01");
-        MyCollRecData r3=new MyCollRecData(R.drawable.coll_recommend,"主题三","2016-06-01");
-        MyCollRecData r4=new MyCollRecData(R.drawable.coll_recommend,"主题四","2016-06-01");
-        MyCollRecData r5=new MyCollRecData(R.drawable.coll_recommend,"主题五","2016-06-01");
-        MyCollRecData r6=new MyCollRecData(R.drawable.coll_recommend,"主题六","2016-06-01");
+        MyCollRecData r1=new MyCollRecData(R.drawable.coll_recommend,"主题一主题一主题一主题一主题一","设计者一");
+        MyCollRecData r2=new MyCollRecData(R.drawable.coll_recommend,"主题二","设计者二");
+        MyCollRecData r3=new MyCollRecData(R.drawable.coll_recommend,"主题三","设计者三");
+        MyCollRecData r4=new MyCollRecData(R.drawable.coll_recommend,"主题四","设计者四");
+        MyCollRecData r5=new MyCollRecData(R.drawable.coll_recommend,"主题五","设计者五");
+        MyCollRecData r6=new MyCollRecData(R.drawable.coll_recommend,"主题六","设计者六");
         mList.add(r1);
         mList.add(r2);
         mList.add(r3);

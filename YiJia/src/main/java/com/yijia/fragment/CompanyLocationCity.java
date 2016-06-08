@@ -1,17 +1,20 @@
 package com.yijia.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.yijia.adapter.CompanyScoreAdpter;
 import com.yijia.adapter.CompanylocaAdpter;
 import com.yijia.bean.Company;
 import com.yijia.bean.TestData;
+import com.yijia.myapplication.CompanyDetailActivity;
 import com.yijia.myapplication.R;
 
 import java.util.ArrayList;
@@ -30,12 +33,14 @@ public class CompanyLocationCity extends Fragment {
         View view=inflater.inflate(R.layout.companylocation,null);
         //初始化listview控件
         initListDataView(view);
-
         //初始化数据
         initListData();
         //initListAdapter();
+        initListener();
         return view;
     }
+
+
 
     private void initListDataView(View view) {
         mListview= (ListView) view.findViewById(R.id.com_loc_list);
@@ -43,6 +48,7 @@ public class CompanyLocationCity extends Fragment {
 
     private void initListData() {
         companycitylist=new ArrayList<>();
+
 
         Company company1=new Company(1,"http://o7ghiqnts.bkt.clouddn.com/companytwo.jpg","苏州宏城基业装饰公司",9.53f,"05123344556");
         Company company2=new Company(1,"http://o7ghiqnts.bkt.clouddn.com/companytwo.jpg","苏州宏城基业装饰公司",9.53f,"05123344556");
@@ -68,15 +74,16 @@ public class CompanyLocationCity extends Fragment {
         companycitylist.add(company9);
         companycitylist.add(company10);
 
-
-
         mCompanylocaAdpter=new CompanyScoreAdpter(getContext(),companycitylist);
         mListview.setAdapter(mCompanylocaAdpter);
-
-
-
-
-
-
+    }
+    private void initListener() {
+        mListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(getContext(), CompanyDetailActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

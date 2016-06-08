@@ -17,7 +17,8 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:src="@mipmap/back"
-          android:layout_gravity="center"/>
+          android:layout_gravity="center"
+          android:onClick="back"/>
       <TextView
           android:layout_gravity="center"
           android:gravity="center"
@@ -29,6 +30,7 @@
           android:text="我的资料"/>
    </LinearLayout>
 <LinearLayout
+    android:id="@+id/me_setting_changeUserPic"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
@@ -37,18 +39,20 @@
        android:layout_height="wrap_content"
        android:layout_gravity="center"
        android:textSize="16sp"
+       android:layout_marginLeft="10dp"
        android:text="头 像"/>
    <ImageView
-       android:id="@+id/userpic"
-       android:layout_width="60dp"
-       android:layout_height="60dp"
-       android:layout_marginLeft="270dp"
-       android:scaleType="fitXY"
-       android:src="@mipmap/user"/>
+       android:id="@+id/default_userpic"
+       android:layout_width="50dp"
+       android:layout_height="50dp"
+     android:scaleType="fitXY"
+       android:layout_marginLeft="250dp"
+       android:src="@mipmap/default_personal_image"/>
 </LinearLayout>
    <LinearLayout
        style="@style/underline"/>
    <LinearLayout
+       android:id="@+id/me_settingusername"
        android:layout_width="match_parent"
        android:layout_height="60dp"
        android:orientation="horizontal">
@@ -57,21 +61,23 @@
           android:layout_height="wrap_content"
           android:layout_gravity="center"
           android:textSize="16sp"
+          android:layout_marginLeft="10dp"
           android:text="用户名"/>
       <TextView
-          android:id="@+id/username"
+          android:id="@+id/me_username"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center"
           android:textSize="16sp"
-          android:layout_marginLeft="250dp"
-          android:text="XXX"/>
+          android:layout_marginLeft="200dp"
+          android:text="13092605211"/>
    </LinearLayout>
       <LinearLayout
           style="@style/underline"/>
 
 
       <LinearLayout
+          android:id="@+id/me_nicknamelinear"
           android:layout_width="match_parent"
           android:layout_height="60dp"
           android:orientation="horizontal">
@@ -80,20 +86,22 @@
              android:layout_height="wrap_content"
              android:layout_gravity="center"
              android:textSize="16sp"
-             android:text="昵 称"/>
+             android:text="昵 称"
+             android:layout_marginLeft="10dp"/>
          <TextView
-             android:id="@+id/nickname"
+             android:id="@+id/me_nickname"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:layout_gravity="center"
              android:textSize="16sp"
-             android:text="XXX"
+             android:text="木子1"
              android:layout_marginLeft="250dp"/>
       </LinearLayout>
          <LinearLayout
              style="@style/underline"/>
 
    <LinearLayout
+       android:id="@+id/me_setting_changephone"
        android:layout_width="match_parent"
        android:layout_height="60dp"
        android:orientation="horizontal">
@@ -102,20 +110,21 @@
           android:layout_height="wrap_content"
           android:layout_gravity="center"
           android:textSize="16sp"
-          android:text="联系电话"/>
+          android:text="联系电话"
+          android:layout_marginLeft="10dp"/>
       <TextView
-          android:id="@+id/phone"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center"
           android:textSize="16sp"
-          android:text="XXX"
-          android:layout_marginLeft="250dp"/>
+          android:text="13083828001"
+          android:layout_marginLeft="180dp"/>
    </LinearLayout>
    <LinearLayout
        style="@style/underline"/>
 
    <LinearLayout
+       android:id="@+id/me_setting_changemail"
        android:layout_width="match_parent"
        android:layout_height="60dp"
        android:orientation="horizontal">
@@ -124,19 +133,21 @@
           android:layout_height="wrap_content"
           android:layout_gravity="center"
           android:textSize="16sp"
-          android:text="邮 箱"/>
+          android:text="邮 箱"
+          android:layout_marginLeft="10dp"/>
       <TextView
           android:id="@+id/email"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center"
           android:textSize="16sp"
-          android:text="XXX"
+          android:text="863***"
           android:layout_marginLeft="250dp"/>
    </LinearLayout>
    <LinearLayout
        style="@style/underline"/>
    <LinearLayout
+       android:id="@+id/me_setting_changesex"
        android:layout_width="match_parent"
        android:layout_height="60dp"
        android:orientation="horizontal">
@@ -145,6 +156,7 @@
           android:layout_height="wrap_content"
           android:layout_gravity="center"
           android:textSize="16sp"
+          android:layout_marginLeft="10dp"
           android:text="性 别"/>
       <TextView
           android:id="@+id/sex"
@@ -152,12 +164,13 @@
           android:layout_height="wrap_content"
           android:layout_gravity="center"
           android:textSize="16sp"
-          android:text="XXX"
-          android:layout_marginLeft="250dp"/>
+          android:text="女"
+          android:layout_marginLeft="280dp"/>
    </LinearLayout>
    <LinearLayout
        style="@style/underline"/>
    <LinearLayout
+       android:id="@+id/me_setting_change_address"
        android:layout_width="match_parent"
        android:layout_height="60dp"
        android:orientation="horizontal">
@@ -166,15 +179,16 @@
           android:layout_height="wrap_content"
           android:layout_gravity="center"
           android:textSize="16sp"
-          android:text="我的地址"/>
+          android:text="我的地址"
+          android:layout_marginLeft="10dp"/>
       <TextView
-          android:id="@+id/address"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center"
           android:textSize="16sp"
-          android:text="XXX"
-          android:layout_marginLeft="250dp"/>
+          android:singleLine="true"
+          android:text="河南民权XX镇"
+          android:layout_marginLeft="200dp"/>
    </LinearLayout>
    <LinearLayout
        style="@style/underline"/>

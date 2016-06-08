@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.yijia.myapplication.BuildStageRateActivity">
+android:orientation="vertical"
+    tools:context="com.yijia.myapplication.MesettingChangePhoneActivity">
     <LinearLayout
         style="@style/topstyle"
         android:padding="3dp">
@@ -23,14 +23,24 @@
             android:textSize="20sp"
             android:layout_marginTop="8dp"
             android:textColor="#ffffff"
-            android:text="工地直播"/>
+            android:text="修改电话"/>
+        <Button
+            android:id="@+id/savephone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="150dp"
+            android:text="保存"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="12"
-        android:orientation="vertical"
-        android:background="#ffffff">
-
-        </LinearLayout>
+        android:layout_weight="12">
+        <EditText
+            android:id="@+id/me_changephone_edit"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
 </LinearLayout>

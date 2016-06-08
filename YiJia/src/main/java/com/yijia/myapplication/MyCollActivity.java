@@ -52,7 +52,7 @@ public class MyCollActivity extends AppCompatActivity {
         colllike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MyCollActivity.this,CollLikeActivity.class);
+                Intent intent=new Intent(MyCollActivity.this,CollRecommentActivity.class);
                 startActivity(intent);
             }
         });

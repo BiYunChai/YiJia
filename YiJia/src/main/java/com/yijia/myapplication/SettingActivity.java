@@ -1,9 +1,11 @@
 package com.yijia.myapplication;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 public class SettingActivity extends AppCompatActivity {
@@ -36,7 +38,7 @@ LinearLayout personalData,share,wehcatcode,aboutus,cleancache;
         wehcatcode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+               showwechatview();
             }
         });
         personalData.setOnClickListener(new View.OnClickListener() {
@@ -46,8 +48,22 @@ LinearLayout personalData,share,wehcatcode,aboutus,cleancache;
                 startActivity(intent);
             }
         });
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
+    private void showwechatview() {
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        ImageView imageView=new ImageView(this);
+        imageView.setImageResource(R.drawable.wechatcode);
+        builder.setTitle("微信二维码")
+                .setView(imageView)
+                .show();
+    }
 
     public void backme(View view) {
         finish();

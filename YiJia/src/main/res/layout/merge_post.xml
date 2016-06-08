@@ -4,7 +4,7 @@
        android:layout_height="match_parent">
     <RadioGroup
         android:id="@+id/raiseandrelypost"
-        style="@style/mwquesandpost"
+        style="@style/mwpost"
         android:background="@color/bottomColor"
         android:orientation="horizontal">
         <RadioButton

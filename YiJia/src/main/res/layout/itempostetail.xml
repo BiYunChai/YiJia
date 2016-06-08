@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="wrap_content">
     <LinearLayout
+        style="@style/topstyle"
+        android:padding="3dp"
+
+        >
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:src="@mipmap/back"
+            android:onClick="backhome"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginTop="8dp"
+            android:text="帖子详情"/>
+
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
         android:id="@+id/questiontop">
         <ImageView
             android:id="@+id/userquespic"
@@ -50,6 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/questionpic"
+        android:layout_marginTop="5dp"
        >
         <ImageView
             android:id="@+id/zan"
@@ -64,4 +86,4 @@
             android:layout_marginLeft="30dp"
             android:src="@mipmap/commentup"/>
     </LinearLayout>
-</RelativeLayout>
+</LinearLayout>

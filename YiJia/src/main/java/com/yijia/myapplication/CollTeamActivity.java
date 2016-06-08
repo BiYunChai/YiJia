@@ -40,12 +40,12 @@ public class CollTeamActivity extends AppCompatActivity {
     }
     private void initData() {
         mList=new ArrayList<>();
-        MyCollCompanyData r1=new MyCollCompanyData(R.drawable.company1,"公司一公司一公司一公司一公司一","9.7");
-        MyCollCompanyData r2=new MyCollCompanyData(R.drawable.company1,"公司二","9.8");
-        MyCollCompanyData r3=new MyCollCompanyData(R.drawable.company1,"公司三","9.7");
-        MyCollCompanyData r4=new MyCollCompanyData(R.drawable.company1,"公司四","9.7");
-        MyCollCompanyData r5=new MyCollCompanyData(R.drawable.company1,"公司五","9.6");
-        MyCollCompanyData r6=new MyCollCompanyData(R.drawable.company1,"公司六","9.5");
+        MyCollCompanyData r1=new MyCollCompanyData(R.drawable.company1,"公司一公司一公司一公司一公司一","9.7分");
+        MyCollCompanyData r2=new MyCollCompanyData(R.drawable.company1,"公司二","9.8分");
+        MyCollCompanyData r3=new MyCollCompanyData(R.drawable.company1,"公司三","9.7分");
+        MyCollCompanyData r4=new MyCollCompanyData(R.drawable.company1,"公司四","9.7分");
+        MyCollCompanyData r5=new MyCollCompanyData(R.drawable.company1,"公司五","9.6分");
+        MyCollCompanyData r6=new MyCollCompanyData(R.drawable.company1,"公司六","9.5分");
         mList.add(r1);
         mList.add(r2);
         mList.add(r3);

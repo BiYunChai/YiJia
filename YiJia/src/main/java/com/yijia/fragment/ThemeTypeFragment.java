@@ -52,9 +52,6 @@ public class ThemeTypeFragment extends Fragment {
         themeList.add(theme2);
         themeList.add(theme3);
         themeList.add(theme4);
-
-
-
         mThemetypeAdpter=new ThemetypeAdpter(getContext(),themeList);
         mListview.setAdapter(mThemetypeAdpter);
 
