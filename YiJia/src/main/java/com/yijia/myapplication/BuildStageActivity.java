@@ -31,7 +31,7 @@ List<MyBuildStageDetail> mList;
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 MyBuildStageDetail myBuildStageDetail=mList.get(position);
-                Intent intent=new Intent(BuildStageActivity.this,BuildStageRateActivity.class);
+                Intent intent=new Intent(BuildStageActivity.this,BuildStageifCompleteActivity.class);
                 startActivity(intent);
             }
         });

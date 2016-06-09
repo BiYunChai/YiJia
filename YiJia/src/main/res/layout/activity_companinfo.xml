@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".BuildStageifCompleteActivity">
+android:orientation="vertical"
+    tools:context="com.yijia.myapplication.CompaninfoActivity">
     <LinearLayout
         style="@style/topstyle"
         android:padding="3dp">
@@ -23,26 +23,12 @@
             android:textSize="20sp"
             android:layout_marginTop="8dp"
             android:textColor="#ffffff"
-            android:text="工地直播"/>
+            android:text="团队详情"/>
     </LinearLayout>
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="12"
-        android:orientation="vertical"
-        android:background="#ffffff">
-<ListView
-    android:id="@+id/buildstagecompletelistview"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"></ListView>
-        </LinearLayout>
-    <Button
-        android:id="@+id/buildstageratebtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="我要评分"
-        android:textColor="@color/write"
-        android:background="@color/topColor"
-        android:textSize="16dp"/>
+        android:text="@string/companyname1"
+        android:textSize="16sp"/>
 </LinearLayout>

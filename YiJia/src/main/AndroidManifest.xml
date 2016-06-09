@@ -81,7 +81,7 @@
         </activity>
         <activity android:name="com.yijia.fragment.CollCompDetailActivity">
         </activity>
-        <activity android:name=".BuildStageRateActivity">
+        <activity android:name=".BuildStageifCompleteActivity">
         </activity>
         <activity
             android:name="com.mob.tools.MobUIShell"
@@ -99,6 +99,14 @@
         <activity android:name=".CompanyDetailActivity">
         </activity>
         <activity android:name=".CompanyDesignActivity">
+        </activity>
+        <activity android:name=".CompaninfoActivity">
+        </activity>
+        <activity android:name=".CompanyCertifyActivity">
+        </activity>
+        <activity android:name=".CompanyRegistinfo">
+        </activity>
+        <activity android:name=".BuildStageRatingActivity">
         </activity>
     </application>
 

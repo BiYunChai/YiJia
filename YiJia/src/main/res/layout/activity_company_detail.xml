@@ -24,6 +24,13 @@
             android:layout_marginTop="8dp"
             android:textColor="#ffffff"
             android:text="团队详情"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:src="@mipmap/collect"
+            android:layout_marginLeft="200dp"
+         />
     </LinearLayout>
 <ScrollView
     android:layout_width="match_parent"
@@ -172,6 +179,7 @@
             android:layout_weight="1"
             android:orientation="vertical">
             <LinearLayout
+                android:id="@+id/companyinfo"
                 android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -202,12 +210,13 @@
 
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/company_certify"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="vertical">
             <LinearLayout
-                android:id="@+id/company_certify"
+
                 android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -285,11 +294,18 @@
                     android:layout_weight="6"
                     android:layout_height="wrap_content"
                     android:text="3人"/>
-
             </LinearLayout>
 
 
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
+    <Button
+        android:id="@+id/applyfreedesign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="申请免费设计"
+        android:textSize="16dp"
+        android:background="@color/topColor"
+        android:textColor="@color/write"/>
 </LinearLayout>
