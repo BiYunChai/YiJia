@@ -66,6 +66,7 @@
         <activity android:name=".LookGoodsActivity"/>
         <activity android:name=".GoodsDetaileActivity"/>
         <activity android:name=".BusniessActivity"/>
+        <activity android:name=".forum_commentActivity"></activity>
         <activity android:name=".CollTeamActivity">
         </activity>
         <activity android:name=".CollStyleActivity">

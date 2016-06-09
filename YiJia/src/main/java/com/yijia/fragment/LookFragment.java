@@ -73,6 +73,7 @@ public class LookFragment extends Fragment {
         mGoodlist.add(good4);
         mGoodlist.add(good5);
         mGoodlist.add(good6);
+        Log.e("one",mGoodlist.size()+"");
 
 
 
@@ -145,9 +146,10 @@ public class LookFragment extends Fragment {
                 mGoodlist.clear();
                 if(position==0){
                     initListData();
+                    Log.e("position==0",mGoodlist.size()+"");
                 }
 
-                if(position==1) {
+                else if(position==1) {
                     Good good1 = new Good("荷花型卧室水晶吊灯222", "132", "http://o7ghiqnts.bkt.clouddn.com/dengthree.jpg");
                     Good good2 = new Good("荷花型卧室水晶吊灯", "132", "http://o7ghiqnts.bkt.clouddn.com/dengthree.jpg");
                     Good good3 = new Good("荷花型卧室水晶吊灯3", "132","http://o7ghiqnts.bkt.clouddn.com/dengthree.jpg");
@@ -160,6 +162,7 @@ public class LookFragment extends Fragment {
                     mGoodlist.add(good4);
                     mGoodlist.add(good5);
                     mGoodlist.add(good6);
+                    Log.e("position==1two",mGoodlist.size()+"");
                 }else{
 
                     Good good1=new Good("荷花型卧室水晶吊灯1","132","http://o7ghiqnts.bkt.clouddn.com/dengfour.jpg");
@@ -174,6 +177,7 @@ public class LookFragment extends Fragment {
                     mGoodlist.add(good4);
                     mGoodlist.add(good5);
                     mGoodlist.add(good6);
+                    Log.e("two",mGoodlist.size()+"");
                 }
                 mLookListAdapter.notifyDataSetChanged();
                 Toast.makeText(getContext(),"选中了"+position,Toast.LENGTH_SHORT).show();

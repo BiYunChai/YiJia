@@ -16,6 +16,7 @@ public class User implements Serializable {
     private String heading;
     private String adddetail;
     private String vertify;
+    //登录状态
     private int ustatus;
 
     public User(String username, String nickname, String password, String phone, String email, int sex, String heading, String adddetail, String vertify, int ustatus) {

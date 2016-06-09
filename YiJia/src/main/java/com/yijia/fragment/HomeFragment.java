@@ -421,10 +421,7 @@ public class HomeFragment extends Fragment{
                 mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        //测试
-                       /* Recommend recommend=mRecoList.get(position-DIFFER);
-                        Log.e("listview下标",recommend.getId()+"");
-                        Toast.makeText(getContext(),"单击了数据库中pic_id为"+recommend.getId()+"的数据",Toast.LENGTH_LONG).show();*/
+
                         Intent intent=new Intent(getActivity(), PicDetailActivity.class);
                         startActivity(intent);
                     }

@@ -42,22 +42,8 @@
             ptr:ptrDrawable="@drawable/default_ptr_flip"
             ptr:ptrAnimationStyle="flip"
             />
-        <!--<ListView
-            android:id="@+id/homelistview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="none">
 
-        </ListView>-->
 
     </LinearLayout>
-
-
-
-
-
-
-
-
 
 </LinearLayout>

@@ -1,14 +1,14 @@
 package com.yijia.myapplication;
 
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import java.util.HashMap;
-import java.util.Objects;
-import java.util.Random;
 
+import java.util.Random;
+import android.support.v7.app.AppCompatActivity;
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
 import cn.smssdk.gui.RegisterPage;
