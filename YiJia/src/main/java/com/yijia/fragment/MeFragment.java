@@ -56,13 +56,14 @@ public class MeFragment extends Fragment {
                 startActivity(intent);
             }
         });
-mButton.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        Intent intent=new Intent(getContext(), LoginActivity.class);
-        startActivity(intent);
-    }
-});
+
+        mButton.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                Intent intent=new Intent(getContext(), LoginActivity.class);
+                startActivity(intent);
+                }
+        });
 
        tiezi.setOnClickListener(new View.OnClickListener() {
            public void onClick(View v) {

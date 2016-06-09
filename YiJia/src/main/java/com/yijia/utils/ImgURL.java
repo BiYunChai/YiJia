@@ -12,5 +12,6 @@ public class ImgURL {
     public static final String ADTHREE="http://o7ghiqnts.bkt.clouddn.com/ad3.jpg";
     public static final String ADFOUR="http://o7ghiqnts.bkt.clouddn.com/ad4.jpg";
     public static final String ADFIVE="http://o7ghiqnts.bkt.clouddn.com/ad5.jpg";
+    public static final String DefaultUserPhoto="http://o7ghiqnts.bkt.clouddn.com/userdefaultphoto.jpg";
 
 }

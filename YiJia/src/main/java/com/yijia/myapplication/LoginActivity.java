@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.yijia.utils.ImgURL;
 
 public class LoginActivity extends AppCompatActivity {
 Button mRegisterButton;
@@ -25,7 +26,7 @@ Button mRegisterButton;
     }
 
     private void initData() {
-        url="http://o7ghiqnts.bkt.clouddn.com/12/1465299480325.jpg";
+        url= ImgURL.DefaultUserPhoto;
         Glide.with(LoginActivity.this).load(url).into(mImageView);
     }
 
