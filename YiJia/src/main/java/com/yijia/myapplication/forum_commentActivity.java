@@ -188,10 +188,13 @@ public class forum_commentActivity extends AppCompatActivity {
                         username=mSharedPreferenceslogin.getString("username","error");
                         SimpleDateFormat sDateFormat=new SimpleDateFormat("yyyy-MM-dd");
                         String date=sDateFormat.format(new java.util.Date());
+                        Log.e("content",comment_content);
                         if(comment_content==null){
-                            Toast.makeText(forum_commentActivity.this,"评论内容不能为空",Toast.LENGTH_LONG).show();
+                            Toast.makeText(forum_commentActivity.this,"评论内容不能为空",Toast.LENGTH_SHORT).show();
+                            Log.e("hhhh","评论内容不能为空");
+
                         }
-                        else{
+                        if(comment_content!=null){
 
 
                             RequestParams params=new RequestParams(HttpUrl.SENDCOMMEND);

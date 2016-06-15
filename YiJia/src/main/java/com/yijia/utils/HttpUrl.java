@@ -17,7 +17,8 @@ public class HttpUrl {
    public static  final String SENDCOMMEND="http://192.168.191.1:8080/YiJia/postServlet?test=insertpostcommend";
    public static  final String SEARCHBUILDING="http://192.168.191.1:8080/YiJia/buildingServlet?test=selectbuild";
    public static final String KNOWLEDGE_SHOWALL = "http://192.168.191.1:8080/YiJia/knowledgeServlet?test=show&page=0";
-   public static final String SELECTONEUSER ="http://192.168.191.1:8080/YiJia/userServlet?usertest=select&username=13083828001";
+   public static final String SELECTONEUSER ="http://192.168.191.1:8080/YiJia/userServlet2?usertest=select";
+   public static final String USERLOGIN="http://192.168.191.1:8080/YiJia/userServlet2?usertest=login";
    public static final String COMPANYSELECTBYSCORE = "http://192.168.191.1:8080/YiJia/companyServlet2?test=selectbyscore";
    public static final String COMPANYSELECTBYREGION = "http://192.168.191.1:8080/YiJia/companyServlet2?test=selectbyregion";
 

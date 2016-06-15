@@ -244,14 +244,27 @@ public class RegisteActivity extends AppCompatActivity implements View.OnClickLi
                             mEditor.putString("username",username);
                             mEditor.putString("password",passwrod);
                             mEditor.putString("nickname","佳宝宝");
+                            mEditor.putString("phone",null);
+                            mEditor.putString("sex",null);
+                            mEditor.putString("email",null);
+                            mEditor.putString("addgeneral",null);
+                            mEditor.putString("adddetail",null);
                             mEditor.putBoolean("isregister",true);
                             mEditor.putString("userphoto", ImgURL.DefaultUserPhoto);
+
                             mEditor.commit();
                             //写入到登录信息
                             mloginEditor.putString("username",username);
                             mloginEditor.putString("password",passwrod);
+                            mloginEditor.putString("nickname","佳宝宝");
                             mloginEditor.putString("userphoto", ImgURL.DefaultUserPhoto);
                             mloginEditor.putBoolean("islogin",true);
+                            mEditor.putString("phone",null);
+                            mEditor.putString("sex",null);
+                            mEditor.putString("email",null);
+                            mEditor.putString("addgeneral",null);
+                            mEditor.putString("adddetail",null);
+
                             mloginEditor.commit();
 
 
