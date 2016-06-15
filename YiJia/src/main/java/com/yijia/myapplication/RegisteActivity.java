@@ -1,6 +1,7 @@
 package com.yijia.myapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -14,14 +15,24 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.yijia.utils.HttpUrl;
+import com.yijia.utils.ImgURL;
+
+import org.xutils.common.Callback;
+import org.xutils.http.RequestParams;
+import org.xutils.x;
+
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
 
 import static com.mob.tools.utils.R.getStringRes;
 
 public class RegisteActivity extends AppCompatActivity implements View.OnClickListener{
+    private static final String REGISTER = "register";
+    private static final String LOGIN = "login";
     private EditText phone;
     private EditText cord;
+    private EditText password;
     private TextView now;
     private Button getCord;
     private Button saveCord;
@@ -31,12 +42,18 @@ public class RegisteActivity extends AppCompatActivity implements View.OnClickLi
     private boolean flag = true;
     String APPKEY="138975429bd81";
     String APPSECRET="2591c2545fead72e26f8ea5471811029";
+
+    //偏好设置相关
+    SharedPreferences mSharedPreferences;
+    SharedPreferences mSharedPreferenceslogin;
+    SharedPreferences.Editor mEditor,mloginEditor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.register);
-        init();
+        initview();
+        userRegister();
 
         SMSSDK.initSDK(this,APPKEY,APPSECRET,true);
         EventHandler eh=new EventHandler(){
@@ -55,14 +72,20 @@ public class RegisteActivity extends AppCompatActivity implements View.OnClickLi
         SMSSDK.registerEventHandler(eh);
     }
 
-    private void init() {
+    private void initview() {
         phone = (EditText) findViewById(R.id.phone);
         cord = (EditText) findViewById(R.id.cord);
+        password= (EditText) findViewById(R.id.register_password);
         now = (TextView) findViewById(R.id.now);
         getCord = (Button) findViewById(R.id.getcord);
         saveCord = (Button) findViewById(R.id.savecord);
         getCord.setOnClickListener(this);
        saveCord.setOnClickListener(this);
+
+        mSharedPreferences=getSharedPreferences(REGISTER,MODE_PRIVATE);
+        mSharedPreferenceslogin=getSharedPreferences(LOGIN,MODE_PRIVATE);
+        mEditor=mSharedPreferences.edit();
+        mloginEditor=mSharedPreferenceslogin.edit();
     }
 
     @Override
@@ -183,6 +206,83 @@ public class RegisteActivity extends AppCompatActivity implements View.OnClickLi
     protected void onDestroy() {
         super.onDestroy();
         SMSSDK.unregisterAllEventHandler();
+    }
+
+    private void userRegister() {
+        saveCord.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final String username=phone.getText().toString();
+                final String passwrod=password.getText().toString();
+                //获取输入信息后输入框清空，并是光标停留在用户名处（用户名框获取焦点）
+                phone.setText("");
+                password.setText("");
+                cord.setText("");
+                phone.requestFocus();
+
+                //访问网络
+                RequestParams params=new RequestParams(HttpUrl.REGISTERURL);
+                params.addBodyParameter("username",username);
+                params.addBodyParameter("passwrod",passwrod);
+                Log.e("username",username);
+                Log.e("passwrod",passwrod);
+                Log.e("url",params.toString());
+                x.http().post(params, new Callback.CommonCallback<String>() {
+                    @Override
+                    public void onSuccess(String result) {
+                        if(result.equals("该用户已存在")){
+                            Toast.makeText(RegisteActivity.this,"该账号已注册",Toast.LENGTH_LONG).show();
+
+                        }
+                        else{
+
+                            Intent intent=new Intent(RegisteActivity.this, MainActivity.class);
+                            Toast.makeText(RegisteActivity.this,"注册成功",Toast.LENGTH_SHORT).show();
+                            startActivity(intent);
+                            Log.e("ok",result);
+                            //注册信息存入偏好设置
+                            mEditor.putString("username",username);
+                            mEditor.putString("password",passwrod);
+                            mEditor.putString("nickname","佳宝宝");
+                            mEditor.putBoolean("isregister",true);
+                            mEditor.putString("userphoto", ImgURL.DefaultUserPhoto);
+                            mEditor.commit();
+                            //写入到登录信息
+                            mloginEditor.putString("username",username);
+                            mloginEditor.putString("password",passwrod);
+                            mloginEditor.putString("userphoto", ImgURL.DefaultUserPhoto);
+                            mloginEditor.putBoolean("islogin",true);
+                            mloginEditor.commit();
+
+
+
+                        }
+
+                    }
+
+                    @Override
+                    public void onError(Throwable ex, boolean isOnCallback) {
+                        Log.e("错误原因：", ex.getMessage() );
+                        Toast.makeText(RegisteActivity.this,"无法访问网络，请稍后再试",Toast.LENGTH_LONG).show();
+
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(Callback.CancelledException cex) {
+
+                    }
+
+                    @Override
+                    public void onFinished() {
+
+                    }
+                });
+
+
+            }
+        });
     }
 
 }

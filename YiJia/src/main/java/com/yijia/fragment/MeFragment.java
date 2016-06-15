@@ -116,7 +116,7 @@ public class MeFragment extends Fragment {
     private void setUserInfo() {
        boolean islogin= mSharedPreferences.getBoolean("islogin",false);
         String userphoto=mSharedPreferences.getString("userphoto", ImgURL.UserPhoto);
-        String username=mSharedPreferences.getString("username","用户名");
+        String nickname=mSharedPreferences.getString("nickname","佳宝宝");
         //判断是否登录
         if(islogin){
             mImageView.setVisibility(View.VISIBLE);
@@ -124,7 +124,7 @@ public class MeFragment extends Fragment {
                     .load(userphoto)
                     .into(mImageView);
             mTextView.setVisibility(View.VISIBLE);
-            mTextView.setText(username);
+            mTextView.setText(nickname);
             mWelcomeText.setVisibility(View.GONE);
             mLOginandRegisterButton.setVisibility(View.GONE);
             Log.e("yun","设置默认头像成功");
