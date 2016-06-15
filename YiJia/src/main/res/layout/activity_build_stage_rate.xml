@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".BuildStageifCompleteActivity">
+    >
     <LinearLayout
         style="@style/topstyle"
         android:padding="3dp">
@@ -28,15 +28,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="12"
+        android:layout_weight="11"
         android:orientation="vertical"
         android:background="#ffffff">
-<ListView
-    android:id="@+id/buildstagecompletelistview"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"></ListView>
-        </LinearLayout>
-    <Button
+        <ListView
+            android:id="@+id/buildstagecompletelistview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </ListView>
+       </LinearLayout>
+       <Button
         android:id="@+id/buildstageratebtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,4 +47,7 @@
         android:textColor="@color/write"
         android:background="@color/topColor"
         android:textSize="16dp"/>
+
+
+
 </LinearLayout>

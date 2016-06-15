@@ -1,4 +1,18 @@
 <resources>
+
+    <string-array name="area">
+
+        <item>金阊区</item>
+        <item>沧浪区</item>
+        <item>虎丘区</item>
+        <item>吴中区</item>
+        <item>平江区</item>
+        <item>相城区</item>
+        <item>工业园区</item>
+        <item>高新区</item>
+
+    </string-array>
+
     <string name="app_name">宜家</string>
     <string name="mybuild">我的工地</string>
 <string name="aboutus">&#160;&#160;&#160;&#160;宜家是一款手机端的装修软件。使用宜家可以方便地找到自己喜欢的装修风格，

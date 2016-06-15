@@ -47,11 +47,11 @@ public class MyRelyPostFragment extends Fragment {
 
     private void initData() {
         mListrelypost=new ArrayList<>();
-        MyPostData q1=new MyPostData(R.mipmap.user,"哈哈","我回复的帖子帖子帖子帖子帖子帖子帖子帖子帖子帖子1",R.drawable.ques,"2016-01-02");
-        MyPostData q2=new MyPostData(R.mipmap.user,"李思","帖子帖子帖子帖子2",R.drawable.ques,"2016-01-06");
-        MyPostData q3=new MyPostData(R.mipmap.user,"哈哈","帖子帖子帖子帖子3",R.drawable.ques,"2016-02-02");
-        MyPostData q4=new MyPostData(R.mipmap.user,"呵呵","帖子帖子帖子帖子4",R.drawable.ques,"2016-02-04");
-        MyPostData q5=new MyPostData(R.mipmap.user,"哦哦","帖子帖子帖子帖子5",R.drawable.ques,"2016-02-14");
+        MyPostData q1=new MyPostData(R.mipmap.user,"哈哈","我回复的帖子帖子帖子帖子帖子帖子帖子帖子帖子帖子1",R.drawable.company1,"2016-01-02");
+        MyPostData q2=new MyPostData(R.mipmap.user,"李思","帖子帖子帖子帖子2",R.drawable.company1,"2016-01-06");
+        MyPostData q3=new MyPostData(R.mipmap.user,"哈哈","帖子帖子帖子帖子3",R.drawable.company1,"2016-02-02");
+        MyPostData q4=new MyPostData(R.mipmap.user,"呵呵","帖子帖子帖子帖子4",R.drawable.company1,"2016-02-04");
+        MyPostData q5=new MyPostData(R.mipmap.user,"哦哦","帖子帖子帖子帖子5",R.drawable.company1,"2016-02-14");
         mListrelypost.add(q1);
         mListrelypost.add(q2);
         mListrelypost.add(q3);

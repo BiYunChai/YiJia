@@ -13,7 +13,7 @@
         >
         <TextView
             android:id="@+id/commentuser"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:text="王美美"
@@ -23,9 +23,10 @@
         <TextView
 
             android:layout_width="0dp"
-            android:layout_weight="5"
+            android:layout_weight="10"
             android:layout_height="match_parent"
             android:text="评论"
+
             android:gravity="center_vertical"/>
 
     </LinearLayout>
@@ -33,14 +34,16 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
-        android:paddingLeft="60dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+
         android:layout_marginTop="10dp">
         <TextView
             android:id="@+id/comment_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="美丽的天气美丽的心"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:textSize="16sp"/>
 
     </LinearLayout>
@@ -48,14 +51,16 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="5dp"
+        >
         <TextView
             android:id="@+id/comment_time"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="2016-06-06"
             android:gravity="center_vertical"
-            android:paddingLeft="230dp"/>
+            android:paddingLeft="180dp"
+            />
 
     </LinearLayout>
 

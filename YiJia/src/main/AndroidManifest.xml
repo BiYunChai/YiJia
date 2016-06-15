@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.yijia.myapplication">
+    package="com.yijia.myapplication">
 
     <!-- 网络权限 -->
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
-    <uses-permission android:name="android.permission.GET_TASKS"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.SEND_SMS"/>
+
+
     <application
         android:name="com.yijia.utils.MyApplication"
         android:allowBackup="true"
@@ -24,93 +26,73 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:windowSoftInputMode="adjustPan">
-        </activity>
-        <activity android:name=".Guide">
-        </activity>
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".Guide" />
         <activity android:name=".WelcomeAty">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DesignApplyActivity"/>
-        <activity android:name=".BookActivity"/>
-        <activity android:name=".CalcuatorActivity"/>
-        <activity android:name=".CalendarActivity"/>
-        <activity android:name=".SafeActivity"/>
-        <activity android:name=".ThemeActivity"/>
-        <activity android:name=".CompanyActivity"/>
-        <activity android:name=".Cal_dzActivity"/>
-        <activity android:name=".Cal_dzdetailActivity"/>
-        <activity android:name=".Cal_dbActivity"/>
-        <activity android:name=".Cal_dbdetailActivity"/>
-        <activity android:name=".Cal_clActivity"/>
-        <activity android:name=".Cal_cldetailActivity"/>
-        <activity android:name=".Cal_bzActivity"/>
-        <activity android:name=".Cal_bzdetailActivity"/>
-        <activity android:name=".MyBuildActivity"/>
-        <activity android:name=".BuildStageActivity"/>
-        <activity android:name=".LoginActivity"/>
-        <activity android:name=".SettingActivity"/>
-        <activity android:name=".AboutUsActivity"/>
-        <activity android:name=".MyCollActivity"/>
-        <activity android:name=".ForgetPasswordActivity"/>
-        <activity android:name=".MyPostActivity"/>
-        <activity android:name=".MyRaisepostDetailActivity"/>
-        <activity android:name=".MyReplypostDetailActivity"/>
-        <activity android:name=".PersonalInformationActivity"/>
-        <activity android:name=".PicDetailActivity"/>
-        <activity android:name=".LookGoodsActivity"/>
-        <activity android:name=".GoodsDetaileActivity"/>
-        <activity android:name=".BusniessActivity"/>
-        <activity android:name=".forum_commentActivity"/>
-        <activity android:name=".CollTeamActivity">
-        </activity>
-        <activity android:name=".CollStyleActivity">
-        </activity>
-        <activity android:name=".CollMaterialActivity">
-        </activity>
-        <activity android:name=".CollRecommentActivity">
-        </activity>
-        <activity android:name=".CollPostActivity">
-        </activity>
-        <activity android:name=".CollRecoDetailActivity">
-        </activity>
-        <activity android:name="com.yijia.fragment.CollCompDetailActivity">
-        </activity>
-        <activity android:name=".BuildStageifCompleteActivity">
-        </activity>
-        <!--
-            <activity
+        <activity android:name=".DesignApplyActivity" />
+        <activity android:name=".BookActivity" />
+        <activity android:name=".CalcuatorActivity" />
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".SafeActivity" />
+
+        <activity android:name=".CompanyActivity" />
+        <activity android:name=".Cal_dzActivity" />
+        <activity android:name=".Cal_dzdetailActivity" />
+        <activity android:name=".Cal_dbActivity" />
+        <activity android:name=".Cal_dbdetailActivity" />
+        <activity android:name=".Cal_clActivity" />
+        <activity android:name=".Cal_cldetailActivity" />
+        <activity android:name=".Cal_bzActivity" />
+        <activity android:name=".Cal_bzdetailActivity" />
+        <activity android:name=".MyBuildActivity" />
+        <activity android:name=".BuildStageActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegisteActivity" />
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".AboutUsActivity" />
+        <activity android:name=".MyCollActivity" />
+        <activity android:name=".ForgetPasswordActivity" />
+        <activity android:name=".MyPostActivity" />
+        <activity android:name=".MyRaisepostDetailActivity" />
+        <activity android:name=".MyReplypostDetailActivity" />
+        <activity android:name=".PersonalInformationActivity" />
+        <activity android:name=".PicDetailActivity" />
+        <activity android:name=".LookGoodsActivity" />
+        <activity android:name=".GoodsDetaileActivity" />
+        <activity android:name=".BusniessActivity" />
+        <activity android:name=".forum_commentActivity" />
+        <activity android:name=".CollTeamActivity" />
+        <activity android:name=".CollStyleActivity" />
+        <activity android:name=".CollMaterialActivity" />
+        <activity android:name=".CollRecommentActivity" />
+        <activity android:name=".CollPostActivity" />
+        <activity android:name=".CollRecoDetailActivity" />
+        <activity android:name="com.yijia.fragment.CollCompDetailActivity" />
+        <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:windowSoftInputMode="stateHidden|adjustResize"/>
-        -->
-        <activity android:name=".ChangeNicknameActivity">
-        </activity>
-        <activity android:name=".MesettingChangePhoneActivity">
-        </activity>
-        <activity android:name=".ChangeMesettingEmailActivity">
-        </activity>
-        <activity android:name=".MesettingChangeaddressActivity">
-        </activity>
-        <activity android:name=".CompanyDetailActivity">
-        </activity>
-        <activity android:name=".CompanyDesignActivity">
-        </activity>
-        <activity android:name=".CompaninfoActivity">
-        </activity>
-        <activity android:name=".CompanyCertifyActivity">
-        </activity>
-        <activity android:name=".CompanyRegistinfo">
-        </activity>
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity android:name=".ChangeNicknameActivity" />
+        <activity android:name=".MesettingChangePhoneActivity" />
+        <activity android:name=".ChangeMesettingEmailActivity" />
+        <activity android:name=".MesettingChangeaddressActivity" />
+        <activity android:name=".CompanyDetailActivity" />
+        <activity android:name=".CompanyDesignActivity" />
+        <activity android:name=".SendPostActivity" />
+        <activity android:name=".NewThemeActivity" />
+        <activity android:name=".ThemeDatailActivity" />
+        <activity android:name=".BuildStageifComplete2Activity"></activity>
         <activity android:name=".BuildStageRatingActivity">
         </activity>
-        <activity android:name=".RegisteActivity">
-        </activity>
+
+
     </application>
 
 </manifest>

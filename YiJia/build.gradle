@@ -27,7 +27,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.2.1'
-    compile 'com.android.support:appcompat-v7:23.3.0'
+
     compile 'org.xutils:xutils:3.3.34'
     compile 'com.google.code.gson:gson:2.6.2'
     compile 'com.github.bumptech.glide:glide:3.7.0'
@@ -37,7 +37,7 @@ dependencies {
     compile files('libs/qiniu-android-sdk-7.0.3.jar')
     compile name: 'SMSSDK-2.0.2', ext: 'aar'
     compile name: 'SMSSDKGUI-2.0.2', ext: 'aar'
-    compile 'com.android.support:appcompat-v7:23.4.0'
+
     compile 'com.w4lle.library:NineLayout:1.0.0'
 
 }

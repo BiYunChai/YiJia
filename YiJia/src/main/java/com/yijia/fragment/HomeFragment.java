@@ -1,6 +1,5 @@
 package com.yijia.fragment;
 
-import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,6 +11,7 @@ import android.os.Message;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,9 +19,7 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -36,16 +34,17 @@ import com.yijia.adapter.ViewPagerAdater;
 
 import com.yijia.bean.Recommend;
 
+import com.yijia.bean.RecommendDetail;
 import com.yijia.myapplication.BookActivity;
 import com.yijia.myapplication.CalcuatorActivity;
 import com.yijia.myapplication.CalendarActivity;
 import com.yijia.myapplication.CompanyActivity;
 import com.yijia.myapplication.DesignApplyActivity;
+import com.yijia.myapplication.NewThemeActivity;
 import com.yijia.myapplication.PicDetailActivity;
 import com.yijia.myapplication.R;
 import com.yijia.myapplication.SafeActivity;
-
-import com.yijia.myapplication.ThemeActivity;
+import android.app.AlertDialog;
 import com.yijia.utils.HttpUrl;
 import com.yijia.utils.ImgURL;
 
@@ -92,7 +91,7 @@ public class HomeFragment extends Fragment{
      */
     private String homelisturl=HttpUrl.HOME_LIST_URL;
     List<Recommend> mRecoList=new ArrayList<>();
-    //List<Recommend> mLoadListData;
+
     HomeListAdapter mHomeListAdapter;
     PullToRefreshListView mListView;
 
@@ -348,7 +347,7 @@ public class HomeFragment extends Fragment{
         mThemeView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(getContext(), ThemeActivity.class);
+                Intent intent =new Intent(getContext(), NewThemeActivity.class);
                 startActivity(intent);
             }
         });
@@ -371,22 +370,20 @@ public class HomeFragment extends Fragment{
 
     private void showDialTelview() {
         AlertDialog.Builder builder=new AlertDialog.Builder(getContext());
-builder.setTitle("免费服务电话")
-        .setMessage("13092605211").setPositiveButton("呼叫", new DialogInterface.OnClickListener() {
-    @Override
-    public void onClick(DialogInterface dialog, int which) {
-
-        Intent intent=new Intent(Intent.ACTION_CALL);
-        Uri uri=Uri.parse("tel:"+"13092605211");
-        intent.setData(uri);
-        try {
-            startActivity(intent);
-        } catch(ActivityNotFoundException exception) {
-        }
-        //dialog.dismiss();
-
-    }
-});
+        builder.setTitle("免费服务电话")
+                .setMessage("13092605211").setPositiveButton("呼叫", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent=new Intent(Intent.ACTION_CALL);
+                Uri uri= Uri.parse("tel:"+"13092605211");
+                intent.setData(uri);
+                try {
+                    startActivity(intent);
+                } catch(ActivityNotFoundException exception) {
+                }
+                //dialog.dismiss();
+            }
+        });
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -394,6 +391,11 @@ builder.setTitle("免费服务电话")
             }
         }).create().show();
     }
+
+
+
+
+
 
 
     public void initListData(){
@@ -404,21 +406,34 @@ builder.setTitle("免费服务电话")
                 //访问网络成功
                // Gson gson=new Gson();
                 Gson gson=new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
-                //
 
                 Type type=new TypeToken<List<Recommend>>(){}.getType();
                 List<Recommend> recoList;
+                recoList=gson.fromJson(result,type);
+                Log.e("yun",result);
+                Log.e("yun+recoList.toString()",recoList.toString());
+
                 //接受网络数据
-                recoList=gson.fromJson(result.toString(),type);
+                Log.e("yun===================",recoList.toString());
                 for (Recommend recommend :recoList) {
-                    int id=recommend.getId();
+
+                    int pic_id=recommend.getPic_id();
                     String imgaddress=recommend.getImgaddress();
                     String topic=recommend.getTopic();
                     String designer=recommend.getDesigner();
                     Date rectime=recommend.getRectime();
-                    Recommend reco=new Recommend(id,imgaddress,topic,designer,rectime);
+
+                    Log.e("yun******",recommend.toString());
+                    List<RecommendDetail> details=recommend.getDetails();
+                    Log.e("yun******",recommend.getDetails().toString());
+
+                    Recommend reco=new Recommend(pic_id,imgaddress,topic,designer,rectime,details);
                     mRecoList.add(reco);
+                    /*mHomeListAdapter=new HomeListAdapter(getContext(),mRecoList);
+                    mListView.setAdapter(mHomeListAdapter);*/
+                    Log.e("yun","添加数据");
                 }
+
 
                 //网络请求是异步操作，保证请求完成后再设置适配器
 
@@ -447,16 +462,28 @@ builder.setTitle("免费服务电话")
                 mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Log.e("cby点击位置",position+"");
+                        Toast.makeText(getContext(),"点击了"+position,Toast.LENGTH_SHORT);
+                        Gson gson=new Gson();
+
+                        Log.e("cby",mRecoList.get(position-2).toString());
+                        Log.e("id",mRecoList.get(position-2).getPic_id()+"");
+                        List<RecommendDetail> recommendDetail=mRecoList.get(position-2).getDetails();
+                        Log.e("cby",recommendDetail.toString());
+                        String result=gson.toJson(recommendDetail);
 
                         Intent intent=new Intent(getActivity(), PicDetailActivity.class);
+                        intent.putExtra("recommenddetail",result);
                         startActivity(intent);
+
+
                     }
                 });
             }
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-                Log.d(TAG,ex.getMessage());
+               // Log.d(TAG,ex.getMessage());
             }
 
             @Override
@@ -570,12 +597,14 @@ builder.setTitle("免费服务电话")
                 List<Recommend> recoList;
                 recoList=gson.fromJson(result.toString(),type);
                 for (Recommend recommend :recoList) {
-                    int id=recommend.getId();
+                    int id=recommend.getPic_id();
                     String imgaddress=recommend.getImgaddress();
                     String topic=recommend.getTopic();
                     String designer=recommend.getDesigner();
                     Date rectime=recommend.getRectime();
-                    Recommend reco=new Recommend(id,imgaddress,topic+"新",designer,rectime);
+                    List<RecommendDetail> details=recommend.getDetails();
+                    Recommend reco=new Recommend(id,imgaddress,topic,designer,rectime,details);
+
                     mRecoList.add(reco);
                 }
 

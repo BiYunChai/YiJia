@@ -9,7 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.yijia.beans.BuildStageCompleteRate;
+import com.yijia.bean.step_detail;
+
 import com.yijia.myapplication.R;
 
 import java.util.List;
@@ -18,11 +19,11 @@ import java.util.List;
  * Created by laz on 2016/6/9.
  */
 public class BuildCompleteRateAdapter extends BaseAdapter {
-    List<BuildStageCompleteRate> mList;
+    List<step_detail> mList;
     Context mContext;
     LayoutInflater mInflater;
 
-    public BuildCompleteRateAdapter(List<BuildStageCompleteRate> list, Context context) {
+    public BuildCompleteRateAdapter(List<step_detail> list, Context context) {
         mList = list;
         mContext = context;
         mInflater=LayoutInflater.from(mContext);
@@ -67,14 +68,14 @@ public class BuildCompleteRateAdapter extends BaseAdapter {
         }
 
 //        ImageView img;
-         BuildStageCompleteRate buildStageCompleteRate = mList.get(position);
-       /* //加载网络图片
+         step_detail step_detail2 = mList.get(position);
+        //加载网络图片
         Glide.with(mContext)
-                .load("http://o7ghiqnts.bkt.clouddn.com/waterelecRate")
-                .into(viewHolder.BuildStageCompletePic);*/
-        viewHolder.BuildStageCompletePic.setImageResource(buildStageCompleteRate.getBuildStageCompletePic());
+                .load(step_detail2.getStepurl())
+                .into(viewHolder.BuildStageCompletePic);
+      // viewHolder.BuildStageCompletePic.setImageResource(buildStageCompleteRate.getBuildStageCompletePic());
 
-        viewHolder.BuildStageCompleteContent.setText(buildStageCompleteRate.getBuildStageCompleteContent());
+        viewHolder.BuildStageCompleteContent.setText(step_detail2.getStepcontent());
         return convertView;
     }
 

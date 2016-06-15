@@ -9,7 +9,7 @@
     android:layout_height="200dp"
     android:layout_gravity="center"
     android:scaleType="fitXY"
-    android:src="@drawable/ques"/>
+   />
     <TextView
         android:id="@+id/BuildStageCompleteContent"
         android:layout_width="match_parent"

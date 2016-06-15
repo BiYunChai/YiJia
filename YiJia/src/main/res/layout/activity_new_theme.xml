@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".forum_commentActivity"
-    >
+    tools:context="com.yijia.myapplication.NewThemeActivity">
     <LinearLayout
         style="@style/topstyle"
         >
@@ -15,53 +14,59 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:src="@mipmap/back"
-            android:onClick="backforum"/>
+            android:onClick="backhome"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:layout_marginTop="8dp"
             android:textColor="#ffffff"
-            android:text="详情"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="11"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
-    <ListView
-        android:id="@+id/comment_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="none"
-        android:divider="@color/line"
-        android:dividerHeight="0.5dp"
-        >
+            android:text="精品专题"/>
 
-    </ListView>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="horizontal">
-        <EditText
-            android:id="@+id/writecomment"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+        <Spinner
+            android:id="@+id/typespinner"
             android:layout_width="0dp"
-            android:layout_weight="5"
             android:layout_height="match_parent"
-            android:hint="评论内容"/>
-        <Button
-            android:id="@+id/sendcommend"
-            android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="发送"
-            android:textColor="@color/write"
-            android:background="@color/topColor"
+
+            android:spinnerMode="dialog"
+
 
             />
+        <Spinner
+            android:id="@+id/housespinner"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+
+            android:spinnerMode="dialog"
+            />
+
     </LinearLayout>
 
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="11">
+            <com.handmark.pulltorefresh.library.PullToRefreshListView
+                android:id="@+id/newthemelistview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+        </LinearLayout>
+
+
+
+
 </LinearLayout>
+

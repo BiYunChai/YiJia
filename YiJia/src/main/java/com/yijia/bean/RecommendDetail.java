@@ -6,7 +6,11 @@ import java.io.Serializable;
  * Created by Administrator on 2016/6/5.
  */
 public class RecommendDetail implements Serializable {
-    private int id;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int id;
     private int pic_id;
     private int pic_num;
     private String pic;
@@ -49,4 +53,11 @@ public class RecommendDetail implements Serializable {
     public void setPic(String pic) {
         this.pic = pic;
     }
+
+	@Override
+	public String toString() {
+		return "RecommendDetail [id=" + id + ", pic_id=" + pic_id
+				+ ", pic_num=" + pic_num + ", pic=" + pic + "]";
+	}
+    
 }

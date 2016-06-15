@@ -51,7 +51,9 @@ public class ForumDetail_list_Adapter extends BaseAdapter {
 
     @Override
     public int getCount() {
+        Log.e("adaptersize",mlist.size()+"");
         return mlist.size();
+
     }
 
     @Override
@@ -101,17 +103,17 @@ public class ForumDetail_list_Adapter extends BaseAdapter {
         }
 
 //
-//        ImageView img;
+//
 
          final Post post=mlist.get(position);
 
-        Log.e("url",post.getUserphoto());
+//        Log.e("url",post.getUserphoto());
         Glide.with(mContext)
                 .load(post.getUserphoto())
                 .into(viewHolder.userphoto);
-        viewHolder.usernickname.setText(post.getUasernickname());
+        viewHolder.usernickname.setText(post.getUsername());
         viewHolder.postcontent.setText(post.getContent());
-        viewHolder.time.setText(post.getDate()+"");
+        viewHolder.time.setText(post.getDate());
         if (imglist.isEmpty()) {
             viewHolder.mNineGridlayout.setVisibility(View.GONE);
         } else {
@@ -122,7 +124,7 @@ public class ForumDetail_list_Adapter extends BaseAdapter {
 
         mforum_favour= (ImageView) convertView.findViewById(R.id.froum_favour);
         mButtonforum_comment= (ImageButton) convertView.findViewById(R.id.froum_comment);
-        mforum_favour.setOnClickListener(new View.OnClickListener() {
+       /* mforum_favour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(forum_flag){
@@ -138,13 +140,14 @@ public class ForumDetail_list_Adapter extends BaseAdapter {
                 }
 
             }
-        });
+        });*/
 
         mButtonforum_comment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Gson gson=new Gson();
                 Post post1=mlist.get(position);
+                Log.e("post1",post1.getPid()+"");
                 String result=gson.toJson(post1);
                 Log.e("cbyfs",post1.toString());
 
@@ -155,21 +158,7 @@ public class ForumDetail_list_Adapter extends BaseAdapter {
             }
         });
 
-        convertView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Gson gson=new Gson();
-                Post post1=mlist.get(position);
-                String result=gson.toJson(post1);
-                Log.e("cbyfs",post1.toString());
 
-                Intent intent=new Intent(mContext,forum_commentActivity.class);
-                intent.putExtra("post",result);
-
-                mContext.startActivity(intent);
-
-            }
-        });
 
         return convertView;
     }
@@ -227,7 +216,7 @@ public class ForumDetail_list_Adapter extends BaseAdapter {
             Glide.with(mContext)
                     .load(getUrl(i))
                     .into(iv);
-           // Picasso.with(context).load(getUrl(i)).placeholder(new ColorDrawable(Color.parseColor("#f5f5f5"))).into(iv);
+
             if (!TextUtils.isEmpty(url)) {
                 iv.setTag(url);
             }

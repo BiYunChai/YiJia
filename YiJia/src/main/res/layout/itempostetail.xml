@@ -63,7 +63,7 @@
     <ImageView
         android:id="@+id/questionpic"
         android:layout_width="match_parent"
-        android:src="@drawable/ques"
+
         android:layout_height="170dp"
         android:scaleType="fitXY"
         android:layout_below="@+id/questiontext"/>

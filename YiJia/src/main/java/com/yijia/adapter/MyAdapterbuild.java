@@ -1,12 +1,14 @@
 package com.yijia.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.yijia.bean.Build;
 import com.yijia.beans.MyBuild;
 import com.yijia.myapplication.R;
 
@@ -16,11 +18,11 @@ import java.util.List;
  * Created by laz on 2016/5/23.
  */
 public class MyAdapterbuild extends BaseAdapter {
-    List<MyBuild> mList;
+    List<Build> mList;
     Context mContext;
     LayoutInflater mInflater;
 
-    public MyAdapterbuild(List<MyBuild> list, Context context) {
+    public MyAdapterbuild(List<Build> list, Context context) {
         mList = list;
         mContext = context;
         mInflater=LayoutInflater.from(mContext);
@@ -69,9 +71,10 @@ public class MyAdapterbuild extends BaseAdapter {
             //说明开始上下滑动，后面的所有行的布局采用第一次绘制时的缓存布局...
       viewHolder= (ViewHolder) convertView.getTag();
         }
-        MyBuild myBuild=mList.get(position);
-        viewHolder.textView_build.setText(myBuild.getMybuild());
-        viewHolder.textView_date.setText(myBuild.getDate());
+        Build myBuild=mList.get(position);
+        viewHolder.textView_build.setText(myBuild.getBuildname());
+        viewHolder.textView_date.setText("2016-05-05");
+        Log.e("cby-MyAdapterbuild",myBuild.getBuildname());
         return convertView;
     }
 }

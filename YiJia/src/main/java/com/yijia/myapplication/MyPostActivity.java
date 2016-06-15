@@ -61,7 +61,7 @@ RadioGroup mRadioGrouppost;
 
             @Override
             public void onPageSelected(int position) {
-//根据当前位置默认默认选中单选按钮
+           //根据当前位置默认默认选中单选按钮
                 resetRadioButton(position);
             }
 

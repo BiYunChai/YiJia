@@ -5,15 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.yijia.bean.Comment;
-import com.yijia.bean.Good;
+import com.yijia.bean.Post_comment;
 import com.yijia.myapplication.R;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -21,11 +16,11 @@ import java.util.List;
  * Created by Administrator on 2016/6/7.
  */
 public class Post_CommentAdapter extends BaseAdapter{
-    List<Comment> mlist;
+    List<Post_comment> mlist;
     LayoutInflater mInflater;
     Context mContext;
 
-    public Post_CommentAdapter(Context context,List<Comment> mlist) {
+    public Post_CommentAdapter(Context context,List<Post_comment> mlist) {
         this.mContext=context;
         this.mlist = mlist;
         mInflater=LayoutInflater.from(mContext);
@@ -74,10 +69,10 @@ public class Post_CommentAdapter extends BaseAdapter{
         }
 
 
-        final Comment comment = mlist.get(position);
-        viewHolder.mComment_name.setText(comment.getUsername());
-        viewHolder.mComment_content.setText(comment.getCom_content());
-        viewHolder.mComment_time.setText(comment.getCom_time());
+        final Post_comment post_comment = mlist.get(position);
+        viewHolder.mComment_name.setText(post_comment.getComm_username());
+        viewHolder.mComment_content.setText(post_comment.getComm_content());
+        viewHolder.mComment_time.setText(post_comment.getDate());
 
         return convertView;
     }

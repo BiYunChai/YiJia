@@ -4,57 +4,77 @@ package com.yijia.myapplication;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.yijia.adapter.MyBuildStageDetailAdagpter;
-import com.yijia.beans.MyBuildStageDetail;
+import com.yijia.bean.ClientStep;
+import com.yijia.bean.step;
+import com.yijia.bean.step_detail;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class BuildStageActivity extends AppCompatActivity {
-List<MyBuildStageDetail> mList;
+     List<step> mList=new ArrayList<>();
+
     MyBuildStageDetailAdagpter mAdagpter;
     ListView mListView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_build_stage);
-        initData();
+        Intent intent=getIntent();
+        String result=intent.getStringExtra("build");
+        Gson gson=new Gson();
+        Type type=new TypeToken<List<step>>(){}.getType();
+        List<step> stepList=gson.fromJson(result,type);
+        Log.e("List<step>",stepList.toString());
+        initData(stepList);
         initViews();
         mAdagpter=new MyBuildStageDetailAdagpter(mList,BuildStageActivity.this);
         mListView.setAdapter(mAdagpter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MyBuildStageDetail myBuildStageDetail=mList.get(position);
-                Intent intent=new Intent(BuildStageActivity.this,BuildStageifCompleteActivity.class);
+                step step1=mList.get(position);
+                List<step_detail> step_details=step1.getStep_details();
+                Gson gson=new Gson();
+                String result=gson.toJson(step_details);
+                Log.e("result",result);
+                Intent intent=new Intent(BuildStageActivity.this,BuildStageifComplete2Activity.class);
+                intent.putExtra("step_details",result);
                 startActivity(intent);
             }
         });
     }
 
-    private void initData() {
-        mList=new ArrayList<>();
-        MyBuildStageDetail s1=new MyBuildStageDetail("准备","恭喜您发布装修需求成功，如有任何疑问请致电宜家客服","2016-02-14",R.mipmap.complete);
-        MyBuildStageDetail s2=new MyBuildStageDetail("水电","水电阶段水电阶段水电阶段水电阶段","2016-02-14",R.mipmap.uncomplete);
-        MyBuildStageDetail s3=new MyBuildStageDetail("泥木","泥木阶段泥木阶段泥木阶段泥木阶段泥木阶段","2016-02-14",R.mipmap.uncomplete);
-        MyBuildStageDetail s4=new MyBuildStageDetail("油漆","油漆阶段油漆阶段油漆阶段油漆阶段油漆阶段","2016-02-14",R.mipmap.uncomplete);
-        MyBuildStageDetail s5=new MyBuildStageDetail("竣工","竣工竣工竣工竣工竣工竣工竣工竣工竣工竣工竣工","2016-02-14",R.mipmap.uncomplete);
-        MyBuildStageDetail s6=new MyBuildStageDetail("竣工后","竣工后一个月竣工后一个月竣工后一个月竣工后一个月","2016-02-14",R.mipmap.uncomplete);
-         mList.add(s1);
-        mList.add(s2);
-        mList.add(s3);
-        mList.add(s4);
-        mList.add(s5);
-        mList.add(s6);
+    private void initData(List<step> stepList) {
+        for (step step1:stepList) {
+            int id=step1.getId();
+            int sid=step1.getSid();
+            String content=step1.getContent();
+            String stepcontent=step1.getStepcontent();
+            String stepname=step1.getStepname();
+            String company=step1.getCompanyname();
+            String score=step1.getScore();
+            String statu=step1.getStatu();
+            List<step_detail> step_details=step1.getStep_details();
+            step step2=new step(id,sid,statu,score,content,company,stepname,step_details,stepcontent);
+            mList.add(step2);
+
+        }
+
 
     }
     private void initViews() {
-mListView= (ListView) findViewById(R.id.listview_buildstage);
+    mListView= (ListView) findViewById(R.id.listview_buildstage);
     }
 
     public void back(View view) {

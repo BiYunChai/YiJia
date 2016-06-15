@@ -6,26 +6,53 @@
     >
     <!--皮肤-->
     <RelativeLayout
+
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="4"
-        android:orientation="vertical"
-        android:background="@color/topColor">
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/backgroud"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"/>
         <TextView
-            android:id="@+id/welcome"
+            android:id="@+id/welcometext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25sp"
             android:textColor="@color/write"
             android:layout_centerInParent="true"
-            android:text="@string/welcome"/>
+            android:text="@string/welcome"
+            />
         <Button
             android:id="@+id/LoginAndRegister"
             style="@style/LoginAndRegisterButton"
-            android:layout_below="@+id/welcome"
+            android:layout_below="@+id/welcometext"
             android:text="@string/LoginAndRegister"
             android:textColor="@color/topColor"
             android:background="@drawable/shape"/>
+        <ImageView
+
+            android:id="@+id/me_userdefaultphoto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/yijialogo"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="70dp"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/me_userdefaultname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/write"
+            android:text="用户名"
+            android:layout_toRightOf="@+id/me_userdefaultphoto"
+            android:layout_marginTop="110dp"
+            android:layout_marginLeft="15dp"
+            android:visibility="gone"
+            />
+
     </RelativeLayout>
     <!--内容-->
     <LinearLayout

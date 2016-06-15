@@ -8,8 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.yijia.beans.MyBuildStageDetail;
-import com.yijia.beans.MyPostData;
+import com.yijia.bean.step;
 import com.yijia.myapplication.R;
 
 import java.util.List;
@@ -18,11 +17,11 @@ import java.util.List;
  * Created by laz on 2016/5/27.
  */
 public class MyBuildStageDetailAdagpter extends BaseAdapter {
-    List<MyBuildStageDetail> mList;
+    List<step> mList;
     Context mContext;
     LayoutInflater mInflater;
 
-    public MyBuildStageDetailAdagpter(List<MyBuildStageDetail> list, Context context) {
+    public MyBuildStageDetailAdagpter(List<step> list, Context context) {
         mList = list;
         mContext = context;
         mInflater=LayoutInflater.from(mContext);
@@ -45,7 +44,7 @@ public class MyBuildStageDetailAdagpter extends BaseAdapter {
     class ViewHolder{
         TextView stagename;
         TextView stagedetailinfo;
-        TextView stagestartdate;
+        TextView mTextstatu;
         ImageView ifcomplete;
     }
     @Override
@@ -59,7 +58,7 @@ public class MyBuildStageDetailAdagpter extends BaseAdapter {
             //初始化当前行布局中的所有控件
             viewHolder.stagename= (TextView) convertView.findViewById(R.id.build_stagename);
             viewHolder.stagedetailinfo= (TextView) convertView.findViewById(R.id.stage_detailinfo);
-            viewHolder.stagestartdate= (TextView) convertView.findViewById(R.id.stagestartdate);
+            viewHolder.mTextstatu= (TextView) convertView.findViewById(R.id.stagestartdate);
             viewHolder.ifcomplete= (ImageView) convertView.findViewById(R.id.ifcomplete);
             //把当前的控件缓存到布局视图中
             convertView.setTag(viewHolder);
@@ -67,11 +66,17 @@ public class MyBuildStageDetailAdagpter extends BaseAdapter {
             //说明开始上下滑动，后面的所有行的布局采用第一次绘制时的缓存布局
             viewHolder= (ViewHolder) convertView.getTag();
         }
-        MyBuildStageDetail myBuildStageDetail=mList.get(position);
-        viewHolder.stagename.setText(myBuildStageDetail.getBuild_stagename());
-        viewHolder.stagedetailinfo.setText(myBuildStageDetail.getStage_detailinfo());
-        viewHolder.stagestartdate.setText(myBuildStageDetail.getStagestartdate());
-        viewHolder.ifcomplete.setImageResource(myBuildStageDetail.getIfcomplete());
+        step step1=mList.get(position);
+        viewHolder.stagename.setText(step1.getStepname());
+        viewHolder.stagedetailinfo.setText(step1.getStepcontent());
+        viewHolder.mTextstatu.setText(step1.getStatu());
+        if(step1.getStatu().equals("完成")){
+            viewHolder.ifcomplete.setImageResource(R.mipmap.complete);
+        }
+        else {
+            viewHolder.ifcomplete.setImageResource(R.mipmap.uncomplete);
+        }
+
         return convertView;
     }
 }

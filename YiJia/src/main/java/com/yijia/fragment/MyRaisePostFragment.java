@@ -48,11 +48,11 @@ public class MyRaisePostFragment extends Fragment {
 
     private void initData() {
         mListpost=new ArrayList<>();
-        MyPostData q1=new MyPostData(R.mipmap.user,"呵呵","我提出的帖子帖子帖子帖子帖子帖子1",R.drawable.ques,"2016-01-02");
-        MyPostData q2=new MyPostData(R.mipmap.user,"呵呵","帖子帖子帖子2",R.drawable.ques,"2016-01-06");
-        MyPostData q3=new MyPostData(R.mipmap.user,"呵呵","帖子帖子帖子3",R.drawable.ques,"2016-02-02");
-        MyPostData q4=new MyPostData(R.mipmap.user,"呵呵","帖子帖子帖子4",R.drawable.ques,"2016-02-04");
-        MyPostData q5=new MyPostData(R.mipmap.user,"呵呵","帖子帖子帖子",R.drawable.ques,"2016-02-14");
+        MyPostData q1=new MyPostData(R.mipmap.user,"呵呵","我提出的帖子帖子帖子帖子帖子帖子1",R.drawable.company1,"2016-01-02");
+        MyPostData q2=new MyPostData(R.mipmap.user,"呵呵","帖子帖子帖子2",R.drawable.company1,"2016-01-06");
+        MyPostData q3=new MyPostData(R.mipmap.user,"呵呵","帖子帖子帖子3",R.drawable.company1,"2016-02-02");
+        MyPostData q4=new MyPostData(R.mipmap.user,"呵呵","帖子帖子帖子4",R.drawable.company1,"2016-02-04");
+        MyPostData q5=new MyPostData(R.mipmap.user,"呵呵","帖子帖子帖子",R.drawable.company1,"2016-02-14");
         mListpost.add(q1);
         mListpost.add(q2);
         mListpost.add(q3);

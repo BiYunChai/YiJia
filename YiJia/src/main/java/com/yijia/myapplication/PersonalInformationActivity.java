@@ -62,6 +62,7 @@ LinearLayout me_setting_changeUserPic;
     GetToken mGetToken;
     String token;
     String urlpath="http://o7ghiqnts.bkt.clouddn.com";
+    //改为用户名
     int id=12;
     User user;
     String imageName;
