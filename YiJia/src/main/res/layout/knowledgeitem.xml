@@ -25,6 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:orientation="vertical"
         android:paddingLeft="5dp"
         android:paddingRight="5dp">
         <TextView
@@ -35,7 +36,13 @@
             android:lines="3"
             android:ellipsize="end"
             android:text="青花饰品是当前流行的时尚元素，在国际时尚界，青花饰品一直都是高贵与品位的象征，像一些小挂件、杯具、花瓶等，在我们的家居装饰中也可以作为很好的软装饰品。它并不奢华，但从里而外透露着一种气度，美丽自认而然就显示出来。"/>
-
+<ImageView
+    android:id="@+id/knowledgepic"
+    android:layout_width="350dp"
+    android:layout_height="200dp"
+    android:scaleType="fitXY"
+    android:layout_gravity="center"
+    android:src="@drawable/knowledge"/>
     </LinearLayout
 >
     <LinearLayout

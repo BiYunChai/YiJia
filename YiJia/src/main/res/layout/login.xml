@@ -17,8 +17,7 @@
         android:id="@+id/me_setting_userpic"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:scaleType="fitXY"
-        android:src="@mipmap/touxiang2"/>
+        android:scaleType="fitXY"/>
 </LinearLayout>
 <!--用户名 密码 登录按钮-->
     <LinearLayout
@@ -94,7 +93,7 @@
                 android:textSize="15sp"/>
         </LinearLayout>
     </LinearLayout>
-    <!--第三方登陆-->
+   <!-- &lt;!&ndash;第三方登陆&ndash;&gt;
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -130,11 +129,11 @@
             android:layout_weight="4"
             android:background="#bbbbbb" >
         </LinearLayout>
-    </LinearLayout>
+    </LinearLayout>-->
 
     <!-- *******其它方式登录******** -->
 
-    <LinearLayout
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
@@ -203,13 +202,13 @@
                 android:text="微信登陆"
                 android:textColor="#bbbbbb" />
         </LinearLayout>
-    </LinearLayout>
+    </LinearLayout>-->
     <!-- 空的线性布局  调整界面 -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1" >
+        android:layout_weight="6" >
     </LinearLayout>
 
 </LinearLayout>

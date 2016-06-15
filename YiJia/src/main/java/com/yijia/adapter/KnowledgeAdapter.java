@@ -8,8 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.yijia.bean.Knowledge;
-import com.yijia.bean.TestData;
 import com.yijia.myapplication.R;
 
 import java.util.List;
@@ -44,11 +44,10 @@ public class KnowledgeAdapter extends BaseAdapter {
     }
     //缓存布局中的控件
     class ViewHolder{
-        TextView mTitle;
-        TextView mCotent;
-        TextView mTime;
-
-
+        TextView title;
+        TextView content;
+        ImageView knowledgepic;
+        TextView ktime;
     }
 
     @Override
@@ -61,11 +60,10 @@ public class KnowledgeAdapter extends BaseAdapter {
             convertView =mInflater.inflate(R.layout.knowledgeitem,null);
             viewHolder = new ViewHolder();
             //初始化当前行布局中的所有控件
-            viewHolder.mTime= (TextView) convertView.findViewById(R.id.time);
-            viewHolder.mTitle= (TextView) convertView.findViewById(R.id.title);
-
-            viewHolder.mCotent= (TextView) convertView.findViewById(R.id.content);
-
+            viewHolder.ktime= (TextView) convertView.findViewById(R.id.time);
+            viewHolder.title= (TextView) convertView.findViewById(R.id.title);
+            viewHolder.knowledgepic= (ImageView) convertView.findViewById(R.id.knowledgepic);
+            viewHolder.content= (TextView) convertView.findViewById(R.id.content);
             //把当前的控件缓存到布局视图中
             convertView.setTag(viewHolder);
 
@@ -78,11 +76,12 @@ public class KnowledgeAdapter extends BaseAdapter {
 //        ImageView img;
         final Knowledge knowledge = list.get(position);
         //加载网络图片
-
-
-        viewHolder.mTitle.setText(knowledge.getTitle());
-        viewHolder.mTime.setText(knowledge.getTime());
-        viewHolder.mCotent.setText(knowledge.getContent());
+        Glide.with(mContext)
+                .load(knowledge.getKnowledgepic())
+                .into(viewHolder.knowledgepic);
+        viewHolder.title.setText(knowledge.getTitle());
+        viewHolder.content.setText(knowledge.getContent());
+        viewHolder.ktime.setText(knowledge.getKtime()+"");
 
         return convertView;
     }

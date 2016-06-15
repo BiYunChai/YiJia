@@ -10,7 +10,6 @@ import android.widget.ListView;
 
 import com.yijia.adapter.CompanylocaAdpter;
 import com.yijia.adapter.ThemetypeAdpter;
-import com.yijia.bean.TestData;
 import com.yijia.bean.Theme;
 import com.yijia.myapplication.R;
 

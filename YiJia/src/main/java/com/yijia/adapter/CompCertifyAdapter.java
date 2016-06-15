@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.yijia.beans.CompanyCertifyData;
+import com.yijia.beans.Compvertify;
 import com.yijia.myapplication.R;
 
 import java.util.List;
@@ -17,11 +17,11 @@ import java.util.List;
  * Created by laz on 2016/6/9.
  */
 public class CompCertifyAdapter extends BaseAdapter {
-    List<CompanyCertifyData> mList;
+    List<Compvertify> mList;
     Context mContext;
     LayoutInflater mInflater;
 
-    public CompCertifyAdapter(List<CompanyCertifyData> list, Context context) {
+    public CompCertifyAdapter(List<Compvertify> list, Context context) {
         mList = list;
         mContext = context;
         mInflater=LayoutInflater.from(mContext);
@@ -61,10 +61,10 @@ public class CompCertifyAdapter extends BaseAdapter {
             //说明开始上下滑动，后面的所有行的布局采用第一次绘制时的缓存布局...
             viewHolder= (ViewHolder) convertView.getTag();
         }
-        CompanyCertifyData companyCertify=mList.get(position);
+        Compvertify companyCertify=mList.get(position);
         //加载网络图片
         Glide.with(mContext)
-                .load(companyCertify.getCompanycertifyaddress())
+                .load(companyCertify.getVertifyaddress())
                 .into(viewHolder.certifypic);
         return convertView;
     }

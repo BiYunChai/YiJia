@@ -18,15 +18,25 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import com.qiniu.android.http.ResponseInfo;
 import com.qiniu.android.storage.UpCompletionHandler;
 import com.qiniu.android.storage.UploadManager;
+import com.yijia.bean.User;
 import com.yijia.utils.GetToken;
+import com.yijia.utils.HttpUrl;
 import com.yijia.utils.UserPicUtils;
 
 import org.json.JSONObject;
+import org.xutils.common.Callback;
+import org.xutils.http.RequestParams;
+import org.xutils.x;
 
 import java.io.File;
+import java.lang.reflect.Type;
 
 //上传头像后保存到七牛后网址格式：http://o7ghiqnts.bkt.clouddn.com/12/1465293643985.jpg
 public class PersonalInformationActivity extends AppCompatActivity {
@@ -38,12 +48,22 @@ LinearLayout me_setting_changeUserPic;
     LinearLayout me_setting_email;
     LinearLayout me_setting_sex;
     LinearLayout me_setting_address;
+    TextView foreusername;
+    TextView forenick;
+    TextView forephone;
+    TextView foreemail;
+    ImageView foreuserhead;
+    TextView foresex;
+    TextView foreaddress;
+
+
     private String[] sexArry=new String[] {"男","女"};
     private static final String TAG = "MyText";
     GetToken mGetToken;
     String token;
     String urlpath="http://o7ghiqnts.bkt.clouddn.com";
     int id=12;
+    User user;
     String imageName;
     //你创建的空间名
     String name="chaibiyun-yijia";
@@ -57,19 +77,73 @@ LinearLayout me_setting_changeUserPic;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.personinformation);
         initViews();
+        initData();
         initListener();
+
     }
 
-    private void initViews() {
+ private void initViews() {
         me_setting_changeUserPic= (LinearLayout) findViewById(R.id.me_setting_changeUserPic);
-        personal_icon= (ImageView) findViewById(R.id.default_userpic);
+       // personal_icon= (ImageView) findViewById(R.id.userpic);
         me_setting_username= (LinearLayout) findViewById(R.id.me_settingusername);
         me_nickname_linear= (LinearLayout) findViewById(R.id.me_nicknamelinear);
         me_setting_phone=(LinearLayout) findViewById(R.id.me_setting_changephone);
         me_setting_email=(LinearLayout) findViewById(R.id.me_setting_changemail);
         me_setting_sex=(LinearLayout) findViewById(R.id.me_setting_changesex);
         me_setting_address=(LinearLayout) findViewById(R.id.me_setting_change_address);
+           forenick= (TextView) findViewById(R.id.me_nickname);
+           forephone= (TextView) findViewById(R.id.forephone);
+           foreemail= (TextView) findViewById(R.id.email);
+            foreuserhead= (ImageView) findViewById(R.id.userpic);
+           foresex= (TextView) findViewById(R.id.sex);
+           foreaddress= (TextView) findViewById(R.id.detailaddress);
+
     }
+
+    private void initData() {
+        RequestParams params=new RequestParams(HttpUrl.SELECTONEUSER);
+        Log.e("url",HttpUrl.SELECTONEUSER);
+        x.http().get(params, new Callback.CommonCallback<String>() {
+
+            @Override
+            public void onSuccess(String result) {
+                Gson gson=new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
+                Type type=new TypeToken<User>(){}.getType();
+                user=gson.fromJson(result,type);
+                Log.e("user---",user.toString());
+                String nickname=user.getNickname();
+                forenick.setText(nickname);
+                String phone=user.getPhone();
+                forephone.setText(phone);
+                String  email=user.getEmail();
+                foreemail.setText(email);
+                String sex=user.getSex();
+                foresex.setText(sex);
+                String   adddetail=user.getAdddetail();
+                foreaddress.setText(adddetail);
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+
+    }
+
+
+
+
 
     private void initListener() {
         me_setting_changeUserPic.setOnClickListener(new View.OnClickListener() {
@@ -82,25 +156,27 @@ LinearLayout me_setting_changeUserPic;
 me_nickname_linear.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
+       String nickname=user.getNickname();
         Intent intent=new Intent(PersonalInformationActivity.this,ChangeNicknameActivity.class);
-        intent.putExtra("nick","小宜");
+        intent.putExtra("nickname",nickname);
         startActivity(intent);
-
     }
 });
         me_setting_phone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String phone=user.getPhone();
                 Intent intent=new Intent(PersonalInformationActivity.this,MesettingChangePhoneActivity.class);
-                intent.putExtra("phone","13083828000");
+               intent.putExtra("phone",phone);
                 startActivity(intent);
             }
         });
         me_setting_email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String email=user.getEmail();
                 Intent intent=new Intent(PersonalInformationActivity.this,ChangeMesettingEmailActivity.class);
-                intent.putExtra("email","863840822@qq.com");
+                intent.putExtra("email",email);
                 startActivity(intent);
             }
         });
@@ -115,8 +191,9 @@ me_nickname_linear.setOnClickListener(new View.OnClickListener() {
         me_setting_address.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String adddetail=user.getAdddetail();
                 Intent intent=new Intent(PersonalInformationActivity.this,MesettingChangeaddressActivity.class);
-                intent.putExtra("address","河南省民权县");
+                intent.putExtra("adddetail",adddetail);
                 startActivity(intent);
             }
         });
@@ -125,12 +202,11 @@ me_nickname_linear.setOnClickListener(new View.OnClickListener() {
     private void showSexChcooseDialog() {
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
         final TextView textView= (TextView) findViewById(R.id.sex);
-        builder.setTitle("您的性别：").setSingleChoiceItems(sexArry, 0, new DialogInterface.OnClickListener() {
+        builder.setTitle("修改性别：").setSingleChoiceItems(sexArry, 0, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                WindowManager windowManager=getWindowManager();
+                Toast.makeText(PersonalInformationActivity.this, "你选择了：" + sexArry[which], Toast.LENGTH_SHORT).show();
                 textView.setText(sexArry[which]);
-
                 dialog.dismiss();
             }
         }).show();
@@ -163,6 +239,10 @@ me_nickname_linear.setOnClickListener(new View.OnClickListener() {
                         // 指定照片保存路径（SD卡），image.jpg为一个临时文件，每次拍照后这个图片都会被替换
                         openCameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, tempUri);
                         startActivityForResult(openCameraIntent, TAKE_PICTURE);
+                      /*  String userpic=user.getHeading();
+                        Glide.with(PersonalInformationActivity.this)
+                                .load(userpic)
+                                .into(foreuserhead);*/
                         break;
                 }
             }

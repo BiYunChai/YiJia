@@ -27,20 +27,12 @@
             android:layout_marginLeft="130dp"
             android:textColor="@color/write"
             android:text="注 册"/>
-        <Button
-            android:id="@+id/certain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="90dp"
-            android:textSize="16sp"
-            android:background="@color/topColor"
-            android:textColor="@color/line"
-            android:text="确定"/>
+
     </LinearLayout>
         <!--注册信息-->
 
         <EditText
-            android:id="@+id/phoneNum"
+            android:id="@+id/phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="请输入手机号"
@@ -51,15 +43,15 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp">
     <EditText
-        android:id="@+id/enterphonevertify"
+        android:id="@+id/cord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:hint="输入验证码"/>
     <Button
+        android:id="@+id/getcord"
         android:layout_marginLeft="20dp"
-        android:id="@+id/getphonevertify"
-        android:layout_toRightOf="@+id/enterphonevertify"
+        android:layout_toRightOf="@+id/cord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="获取手机验证码"
@@ -102,12 +94,95 @@
             > </LinearLayout>
 
         <Button
-            android:id="@+id/register_button"
+            android:id="@+id/savecord"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/topColor"
             android:text="注  册"
             android:textSize="20sp"
             android:textColor="#ffffff" />
+<!--    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="短信验证"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="手机号：" />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_toRightOf="@+id/textView1"
+        android:maxLength="11"
+        android:ems="11"
+        android:inputType="phone" >
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/phone"
+        android:text="验证码："/>
+
+    <EditText
+        android:id="@+id/cord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignLeft="@+id/phone"
+        android:ems="4"
+        android:maxLength="4"
+        android:inputType="phone" />
+
+    <Button
+        android:id="@+id/getcord"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/cord"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/cord"
+        android:visibility="visible"
+        android:text="获取验证码" />
+
+    <Button
+        android:id="@+id/savecord"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cord"
+        android:layout_margin="20dp"
+        android:text="验证" />-->
+
+    <TextView
+        android:id="@+id/now"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/savecord"
+        android:layout_toRightOf="@+id/cord"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        android:text="提示信息"
+        android:textColor="#aaaaaa" />
 
 </LinearLayout>

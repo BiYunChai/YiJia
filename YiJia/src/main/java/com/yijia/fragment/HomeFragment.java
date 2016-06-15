@@ -1,6 +1,10 @@
 package com.yijia.fragment;
 
+import android.app.AlertDialog;
+import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -40,7 +44,7 @@ import com.yijia.myapplication.DesignApplyActivity;
 import com.yijia.myapplication.PicDetailActivity;
 import com.yijia.myapplication.R;
 import com.yijia.myapplication.SafeActivity;
-import com.yijia.myapplication.ServiceActivity;
+
 import com.yijia.myapplication.ThemeActivity;
 import com.yijia.utils.HttpUrl;
 import com.yijia.utils.ImgURL;
@@ -360,13 +364,35 @@ public class HomeFragment extends Fragment{
         mServiceView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(getContext(), ServiceActivity.class);
-                startActivity(intent);
+                showDialTelview();
             }
         });
+    }
 
+    private void showDialTelview() {
+        AlertDialog.Builder builder=new AlertDialog.Builder(getContext());
+builder.setTitle("免费服务电话")
+        .setMessage("13092605211").setPositiveButton("呼叫", new DialogInterface.OnClickListener() {
+    @Override
+    public void onClick(DialogInterface dialog, int which) {
 
+        Intent intent=new Intent(Intent.ACTION_CALL);
+        Uri uri=Uri.parse("tel:"+"13092605211");
+        intent.setData(uri);
+        try {
+            startActivity(intent);
+        } catch(ActivityNotFoundException exception) {
+        }
+        //dialog.dismiss();
 
+    }
+});
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        }).create().show();
     }
 
 

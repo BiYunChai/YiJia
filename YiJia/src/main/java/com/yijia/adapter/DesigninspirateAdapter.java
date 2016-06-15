@@ -8,7 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.yijia.beans.DesignData;
+import com.bumptech.glide.Glide;
+import com.yijia.beans.Compdesign;
 import com.yijia.myapplication.R;
 
 import java.util.List;
@@ -19,9 +20,9 @@ import java.util.List;
 public class DesigninspirateAdapter extends BaseAdapter {
     LayoutInflater mInflater;
     Context mContext;
-    List<DesignData> list;
+    List<Compdesign> list;
 
-    public DesigninspirateAdapter(Context context, List<DesignData> list) {
+    public DesigninspirateAdapter(Context context, List<Compdesign> list) {
         mContext = context;
         this.list = list;
         mInflater=LayoutInflater.from(mContext);
@@ -76,17 +77,19 @@ public class DesigninspirateAdapter extends BaseAdapter {
             //说明开始上下滑动，后面的所有行的布局采用第一次绘制时的缓存布局...
             viewHolder= (ViewHolder) convertView.getTag();
         }
-        DesignData designData=list.get(position);
-        viewHolder.design_title.setText(designData.getDesign_title());
-        viewHolder.designer.setText(designData.getDesigner());
-        viewHolder.design_style.setText(designData.getDesign_style());
-        viewHolder.design_squae.setText(designData.getDesign_square());
-        viewHolder.design_price.setText(designData.getDesign_price());
-        viewHolder.design_type.setText(designData.getDesign_type());
-        viewHolder.design_buildaddress.setText(designData.getDesign_buildaddress());
-        viewHolder.design_inspire.setText(designData.getDesign_inspire());
-        viewHolder.design_pic.setImageResource(designData.getDesign_pic());
-
+        Compdesign compdesign=list.get(position);
+        viewHolder.design_title.setText(compdesign.getDesign_title());
+        viewHolder.designer.setText(compdesign.getDesigner());
+        viewHolder.design_style.setText(compdesign.getDesign_style());
+        viewHolder.design_squae.setText(compdesign.getDesign_square()+"");
+        viewHolder.design_price.setText(compdesign.getDesign_price()+"");
+        viewHolder.design_type.setText(compdesign.getDesign_type());
+        viewHolder.design_buildaddress.setText(compdesign.getDesign_buildaddress());
+        viewHolder.design_inspire.setText(compdesign.getDesign_inspire());
+      //加载网络图片
+        Glide.with(mContext)
+                .load(compdesign.getDesign_pic())
+                .into(viewHolder.design_pic);
         return convertView;
     }
 }

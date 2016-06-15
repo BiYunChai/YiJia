@@ -9,8 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.yijia.bean.Company;
-import com.yijia.bean.TestData;
+import com.yijia.beans.Company;
 import com.yijia.myapplication.R;
 
 import java.util.List;
@@ -21,7 +20,7 @@ import java.util.List;
 public class CompanyScoreAdpter extends BaseAdapter {
     LayoutInflater mInflater;
     Context mContext;
-    List<Company> list;
+    List<com.yijia.beans.Company> list;
 
     public CompanyScoreAdpter(Context mContext, List<Company> list) {
         this.mContext = mContext;
@@ -81,7 +80,7 @@ public class CompanyScoreAdpter extends BaseAdapter {
         final Company company = list.get(position);
         //加载网络图片
         Glide.with(mContext)
-                .load(company.getImgaddress())
+                .load(company.getLogoaddress())
                 .into(viewHolder.pic);
        // viewHolder.pic.setImageResource(R.drawable.company2);
         //  viewHolder.pic.setImageDrawable();

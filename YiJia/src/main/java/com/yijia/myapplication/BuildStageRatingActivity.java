@@ -20,7 +20,7 @@ Button compaintbtn;
         compaintbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(BuildStageRatingActivity.this, "投诉成功", Toast.LENGTH_SHORT).show();
+                Toast.makeText(BuildStageRatingActivity.this, "评论成功", Toast.LENGTH_SHORT).show();
             }
         });
     }

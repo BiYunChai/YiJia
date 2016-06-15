@@ -160,7 +160,7 @@
             android:layout_width="0dp"
             android:layout_weight="3"
             android:layout_height="wrap_content"
-            android:text="2015-08-08~~~"
+            android:text="10年"
             android:layout_marginLeft="8dp"
             android:textSize="16dp"/>
     </LinearLayout>
@@ -217,7 +217,7 @@
             android:layout_width="0dp"
             android:layout_weight="3"
             android:layout_height="wrap_content"
-            android:text="某某某"
+            android:text="马丁"
             android:layout_marginLeft="8dp"
             android:textSize="16dp"/>
     </LinearLayout>

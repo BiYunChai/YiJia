@@ -1,17 +1,21 @@
 package com.yijia.bean;
 
+import java.sql.Date;
+
 /**
  * Created by Administrator on 2016/6/1.
  */
 public class Knowledge {
     String title;
     String content;
-    String time;
+    String knowledgepic;
+    Date ktime;
 
-    public Knowledge(String title, String content, String time) {
+    public Knowledge(String title, String content, String knowledgepic, Date ktime) {
         this.title = title;
         this.content = content;
-        this.time = time;
+        this.knowledgepic = knowledgepic;
+        this.ktime = ktime;
     }
 
     public String getTitle() {
@@ -30,11 +34,19 @@ public class Knowledge {
         this.content = content;
     }
 
-    public String getTime() {
-        return time;
+    public String getKnowledgepic() {
+        return knowledgepic;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setKnowledgepic(String knowledgepic) {
+        this.knowledgepic = knowledgepic;
+    }
+
+    public Date getKtime() {
+        return ktime;
+    }
+
+    public void setKtime(Date ktime) {
+        this.ktime = ktime;
     }
 }

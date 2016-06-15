@@ -12,14 +12,15 @@ public class User implements Serializable {
     private String password;
     private String phone;
     private String email;
-    private int sex;
+    private String sex;
     private String heading;
+    private String addgeneral;
     private String adddetail;
     private String vertify;
     //登录状态
     private int ustatus;
 
-    public User(String username, String nickname, String password, String phone, String email, int sex, String heading, String adddetail, String vertify, int ustatus) {
+    public User(String username, String nickname, String password, String phone, String email, String sex, String heading, String addgeneral, String adddetail, String vertify, int ustatus) {
         this.username = username;
         this.nickname = nickname;
         this.password = password;
@@ -27,6 +28,7 @@ public class User implements Serializable {
         this.email = email;
         this.sex = sex;
         this.heading = heading;
+        this.addgeneral = addgeneral;
         this.adddetail = adddetail;
         this.vertify = vertify;
         this.ustatus = ustatus;
@@ -76,11 +78,11 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public int getSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(int sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 
@@ -90,6 +92,14 @@ public class User implements Serializable {
 
     public void setHeading(String heading) {
         this.heading = heading;
+    }
+
+    public String getAddgeneral() {
+        return addgeneral;
+    }
+
+    public void setAddgeneral(String addgeneral) {
+        this.addgeneral = addgeneral;
     }
 
     public String getAdddetail() {
@@ -114,5 +124,22 @@ public class User implements Serializable {
 
     public void setUstatus(int ustatus) {
         this.ustatus = ustatus;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", password='" + password + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", sex='" + sex + '\'' +
+                ", heading='" + heading + '\'' +
+                ", addgeneral='" + addgeneral + '\'' +
+                ", adddetail='" + adddetail + '\'' +
+                ", vertify='" + vertify + '\'' +
+                ", ustatus=" + ustatus +
+                '}';
     }
 }

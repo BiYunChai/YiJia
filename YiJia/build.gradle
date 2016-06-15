@@ -38,4 +38,6 @@ dependencies {
     compile name: 'SMSSDK-2.0.2', ext: 'aar'
     compile name: 'SMSSDKGUI-2.0.2', ext: 'aar'
     compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.w4lle.library:NineLayout:1.0.0'
+
 }

@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.yijia.bean.TestData;
 import com.yijia.bean.Theme;
 import com.yijia.myapplication.R;
 

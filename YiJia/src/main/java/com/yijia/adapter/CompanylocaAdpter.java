@@ -9,8 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.yijia.bean.Recommend;
-import com.yijia.bean.TestData;
+import com.yijia.beans.Company;
 import com.yijia.myapplication.R;
 
 import java.util.List;
@@ -21,9 +20,9 @@ import java.util.List;
 public class CompanylocaAdpter extends BaseAdapter {
     LayoutInflater mInflater;
     Context mContext;
-    List<TestData> list;
+    List<Company> list;
 
-    public CompanylocaAdpter(Context mContext, List<TestData> list) {
+    public CompanylocaAdpter(Context mContext, List<Company> list) {
         this.mContext = mContext;
         this.list = list;
         mInflater=LayoutInflater.from(mContext);
@@ -78,16 +77,16 @@ public class CompanylocaAdpter extends BaseAdapter {
 
 //
 //        ImageView img;
-        final TestData testData = list.get(position);
+        final Company company = list.get(position);
         //加载网络图片
        Glide.with(mContext)
                .load("http://o7ghiqnts.bkt.clouddn.com/companytwo.jpg")
                .into(viewHolder.pic);
         //viewHolder.pic.setImageResource(R.drawable.company1);
         //  viewHolder.pic.setImageDrawable();
-        viewHolder.name.setText(testData.getCompanyname());
-        viewHolder.tel.setText(testData.getComtel());
-        viewHolder.score.setText(testData.getScore()+"");
+        viewHolder.name.setText(company.getCompanyname());
+        viewHolder.tel.setText(company.getComtel());
+        viewHolder.score.setText(company.getScore()+"");
 
         return convertView;
     }

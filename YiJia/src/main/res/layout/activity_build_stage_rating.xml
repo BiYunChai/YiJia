@@ -134,24 +134,13 @@
                 android:text="4.8分"/>
         </LinearLayout>
 
-        <EditText
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="30dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="写下投诉理由"/>
         <Button
             android:id="@+id/compaint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="我要投诉"/>
-        <TextView
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="*投诉提交后，客服将在24小时内联系您"
-            android:textSize="10dp"/>
+            android:text="提交"/>
+
 
     </LinearLayout>
 </LinearLayout>
