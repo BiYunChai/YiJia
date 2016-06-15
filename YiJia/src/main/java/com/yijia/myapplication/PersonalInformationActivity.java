@@ -11,8 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
+
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -83,7 +82,48 @@ LinearLayout me_setting_changeUserPic;
 
     }
 
- private void initViews() {
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        RequestParams params = new RequestParams(HttpUrl.SELECTONEUSER);
+        x.http().post(params, new Callback.CommonCallback<String>() {
+
+            @Override
+            public void onSuccess(String result) {
+                Gson gson=new Gson();
+                Type type=new TypeToken<User>(){}.getType();
+                User result1=gson.fromJson(result,type);
+                int head;
+                String userhead=result1.getHeading();
+                head=Integer.parseInt(userhead);
+                foreuserhead.setImageResource(head);
+                forenick.setText(result1.getNickname());
+                forephone.setText(result1.getPhone());
+                foreemail.setText(result1.getEmail());
+                foresex.setText(result1.getSex());
+                foreaddress.setText(result1.getAdddetail());
+
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+    }
+
+    private void initViews() {
         me_setting_changeUserPic= (LinearLayout) findViewById(R.id.me_setting_changeUserPic);
        // personal_icon= (ImageView) findViewById(R.id.userpic);
         me_setting_username= (LinearLayout) findViewById(R.id.me_settingusername);
@@ -95,7 +135,7 @@ LinearLayout me_setting_changeUserPic;
            forenick= (TextView) findViewById(R.id.me_nickname);
            forephone= (TextView) findViewById(R.id.forephone);
            foreemail= (TextView) findViewById(R.id.email);
-            foreuserhead= (ImageView) findViewById(R.id.userpic);
+           foreuserhead= (ImageView) findViewById(R.id.userpic);
            foresex= (TextView) findViewById(R.id.sex);
            foreaddress= (TextView) findViewById(R.id.detailaddress);
 
@@ -112,6 +152,8 @@ LinearLayout me_setting_changeUserPic;
                 Type type=new TypeToken<User>(){}.getType();
                 user=gson.fromJson(result,type);
                 Log.e("user---",user.toString());
+                String username=user.getUsername();
+                foreusername.setText(username);
                 String nickname=user.getNickname();
                 forenick.setText(nickname);
                 String phone=user.getPhone();
@@ -142,10 +184,6 @@ LinearLayout me_setting_changeUserPic;
 
     }
 
-
-
-
-
     private void initListener() {
         me_setting_changeUserPic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -168,7 +206,7 @@ me_nickname_linear.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String phone=user.getPhone();
                 Intent intent=new Intent(PersonalInformationActivity.this,MesettingChangePhoneActivity.class);
-               intent.putExtra("phone",phone);
+                intent.putExtra("phone",phone);
                 startActivity(intent);
             }
         });

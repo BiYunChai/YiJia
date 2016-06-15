@@ -6,6 +6,7 @@ package com.yijia.utils;
  * Created by Administrator on 2016/5/26.
  */
 public class HttpUrl {
+   public static final String UPDATEUSERINFO = "http://localhost:8080/YiJia/userServlet?usertest=update";
    public static final String HOME_LIST = "http://192.168.191.1:8080/YiJia/recommendServlet?test=show&page=";
    public static final String REGISTERURL = "http://192.168.191.1:8080/YiJia/userServlet2?usertest=register";
    public static final String POST_SELECTALL = "http://192.168.191.1:8080/YiJia/postServlet?test=selectall";
