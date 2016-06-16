@@ -24,7 +24,10 @@ import java.lang.reflect.Type;
 public class ChangeNicknameActivity extends AppCompatActivity {
      EditText mEditText;
     Button mSavenicknameButton;
+    private static final String REGISTER = "register";
+    private static final String LOGIN = "login";
     SharedPreferences mSharedPreferences;
+    SharedPreferences mSharedPreferenceslogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,18 +40,21 @@ public class ChangeNicknameActivity extends AppCompatActivity {
     private void initView() {
         mEditText= (EditText) findViewById(R.id.me_changenickname_edit);
         mSavenicknameButton= (Button) findViewById(R.id.savenickname);
-
+        mSharedPreferences=getSharedPreferences(REGISTER,MODE_PRIVATE);
+        mSharedPreferenceslogin=getSharedPreferences(LOGIN,MODE_PRIVATE);
     }
 
     private void initoriginData() {
         Intent intent=getIntent();
         String nickname=intent.getStringExtra("nickname");
         mEditText.setText(nickname);
+
     }
     private void initListener() {
         mSavenicknameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
             String afterModifyNick=mEditText.getText().toString();
                 if (afterModifyNick==null){

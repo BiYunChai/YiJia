@@ -230,7 +230,7 @@ public class RegisteActivity extends AppCompatActivity implements View.OnClickLi
                 x.http().post(params, new Callback.CommonCallback<String>() {
                     @Override
                     public void onSuccess(String result) {
-                        if(result.equals("该用户已存在")){
+                        if(result.equals("用户不存在")){
                             Toast.makeText(RegisteActivity.this,"该账号已注册",Toast.LENGTH_LONG).show();
 
                         }

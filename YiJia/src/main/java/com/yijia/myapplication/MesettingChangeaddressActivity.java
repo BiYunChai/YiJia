@@ -31,7 +31,6 @@ public class MesettingChangeaddressActivity extends AppCompatActivity {
     }
 
 
-
     private void initoriginData() {
         Intent intent=getIntent();
         String address=intent.getStringExtra("adddetail");
@@ -56,13 +55,13 @@ public class MesettingChangeaddressActivity extends AppCompatActivity {
                 builder.setMessage("修改昵称成功").create().show();*/
                 RequestParams params=new RequestParams(HttpUrl.UPDATEUSERINFO);
 
-                params.addBodyParameter("username","");
-                params.addBodyParameter("nickname","");
-                params.addBodyParameter("phone","");
-                params.addBodyParameter("email","");
-                params.addBodyParameter("sex","");
-                params.addBodyParameter("heading","");
-                params.addBodyParameter("adddetail","");
+                params.addBodyParameter("username","默认");
+                params.addBodyParameter("nickname","默认");
+                params.addBodyParameter("phone","默认");
+                params.addBodyParameter("email","默认");
+                params.addBodyParameter("sex","默认");
+                params.addBodyParameter("heading","默认");
+                params.addBodyParameter("adddetail","默认");
                 x.http().post(params, new Callback.CommonCallback<String>() {
 
                     @Override
