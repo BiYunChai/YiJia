@@ -27,7 +27,8 @@ import java.lang.reflect.Type;
 public class LoginActivity extends AppCompatActivity {
     private static final String REGISTER = "register";
     private static final String LOGIN = "login";
-
+    String username="";
+    String password="";
     Button mRegisterButton;
     Button mforget_passwordButton;
     Button login_button;
@@ -99,8 +100,8 @@ public class LoginActivity extends AppCompatActivity {
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = usernameText.getText().toString();
-                String password = passwordText.getText().toString();
+                username = usernameText.getText().toString();
+                password = passwordText.getText().toString();
                 //访问网络
                 RequestParams params = new RequestParams(HttpUrl.USERLOGIN);
                 params.addBodyParameter("username", username);
@@ -114,6 +115,16 @@ public class LoginActivity extends AppCompatActivity {
                         }.getType();
                         String result2 = gson.fromJson(result, type);
                         if (result2.equals("登录成功")) {
+                            //登陆成功后读取该用户的信息：user对象
+                            //写入到偏好设置
+                            mEditor.putString("username",username);
+                            mEditor.putString("password",password);
+                            mEditor.putString("userphoto",ImgURL.DefaultUserPhoto);
+                            mEditor.putBoolean("islogin",true);
+                            mEditor.commit();
+                            Log.e("yunusername",username);
+                            Log.e("yunpassword",password);
+                            Log.e("userphoto",ImgURL.DefaultUserPhoto);
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
 

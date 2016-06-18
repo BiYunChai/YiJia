@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CompanyCertifyActivity extends AppCompatActivity {
-List<Compvertify> mcompvertifyList=new ArrayList<>();
+    List<Compvertify> mcompvertifyList=new ArrayList<>();
     CompCertifyAdapter mAdapter;
     ListView mListView;
     ImageView mImageViewvertify;

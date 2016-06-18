@@ -10,10 +10,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
@@ -21,18 +18,15 @@ import com.w4lle.library.NineGridAdapter;
 import com.w4lle.library.NineGridlayout;
 import com.yijia.bean.Post;
 import com.yijia.bean.Postimg;
-import com.yijia.fragment.ForumFragment;
 import com.yijia.myapplication.R;
 import com.yijia.myapplication.forum_commentActivity;
 
 import java.util.List;
 
-import static com.yijia.myapplication.R.mipmap.favour_select;
-
 /**
  * Created by Administrator on 2016/6/6.
  */
-public class ForumDetail_list_Adapter extends BaseAdapter {
+public class ForumCommentHeader_list_Adapter extends BaseAdapter {
     LayoutInflater mInflater;
     Context mContext;
     List<Post> mlist;
@@ -41,7 +35,7 @@ public class ForumDetail_list_Adapter extends BaseAdapter {
     private boolean commentlayout=false;
     ImageView mforum_favour;
     ImageButton mButtonforum_comment;
-    public ForumDetail_list_Adapter(Context mContext, List<Post> list) {
+    public ForumCommentHeader_list_Adapter(Context mContext, List<Post> list) {
 
         this.mContext = mContext;
 
@@ -51,7 +45,7 @@ public class ForumDetail_list_Adapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        Log.e("adaptersize",mlist.size()+"");
+        Log.e("frumcomment_postsize",mlist.size()+"");
 
         return mlist.size();
 
@@ -86,14 +80,14 @@ public class ForumDetail_list_Adapter extends BaseAdapter {
 
         if (convertView == null){
 
-            convertView =mInflater.inflate(R.layout.forum_list_item,null);
+            convertView =mInflater.inflate(R.layout.forumcomment_header_item,null);
             viewHolder = new ViewHolder();
 
-            viewHolder.userphoto= (ImageView) convertView.findViewById(R.id.forum_detail_userimg);
-            viewHolder.usernickname= (TextView) convertView.findViewById(R.id.forum_detail_username);
-            viewHolder.postcontent= (TextView) convertView.findViewById(R.id.post_detail_content);
-            viewHolder.time= (TextView) convertView.findViewById(R.id.post_detail_time);
-            viewHolder.mNineGridlayout= (NineGridlayout) convertView.findViewById(R.id.forum_detail_pic);
+            viewHolder.userphoto= (ImageView) convertView.findViewById(R.id.forumcomment_detail_userimg);
+            viewHolder.usernickname= (TextView) convertView.findViewById(R.id.forumcomment_detail_username);
+            viewHolder.postcontent= (TextView) convertView.findViewById(R.id.commentpost_detail_content);
+            viewHolder.time= (TextView) convertView.findViewById(R.id.commentpost_detail_time);
+            viewHolder.mNineGridlayout= (NineGridlayout) convertView.findViewById(R.id.forumcomment_detail_pic);
 
 
             convertView.setTag(viewHolder);
@@ -123,41 +117,7 @@ public class ForumDetail_list_Adapter extends BaseAdapter {
         }
 
 
-        //mforum_favour= (ImageView) convertView.findViewById(R.id.froum_favour);
-        mButtonforum_comment= (ImageButton) convertView.findViewById(R.id.froum_comment);
-       /* mforum_favour.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(forum_flag){
-                    mforum_favour.setImageResource(R.mipmap.favour);
-                    forum_flag=false;
-                    Log.e("bbb",position+"cby");
-                    Log.e("aaa","取消赞");
 
-                }else {
-                    mforum_favour.setImageResource(R.mipmap.favour_select);
-                    forum_flag=true;
-                    Log.e("aaa","点击赞");
-                }
-
-            }
-        });*/
-
-        mButtonforum_comment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Gson gson=new Gson();
-                Post post1=mlist.get(position);
-                Log.e("post1",post1.getPid()+"");
-                String result=gson.toJson(post1);
-                Log.e("cbyfs",post1.toString());
-
-                Intent intent=new Intent(mContext,forum_commentActivity.class);
-                intent.putExtra("post",result);
-
-                mContext.startActivity(intent);
-            }
-        });
 
 
 

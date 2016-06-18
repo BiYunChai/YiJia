@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -21,8 +22,7 @@ public class CompanyDesignActivity extends AppCompatActivity {
     List<Compdesign> mCompdesignList=new ArrayList<>();
     DesigninspirateAdapter mAdapter;
     ListView mListView;
-    //Company mCompany;
-   //Compdesign compdesign;
+
 
     int cid;
     TextView design_title;
@@ -40,10 +40,9 @@ public class CompanyDesignActivity extends AppCompatActivity {
         setContentView(R.layout.activity_company_design);
         initViews();
         initGson();
-        //initData(mCompdesignList);
-     //initdesignData(mCompdesignList);
+
         mListView= (ListView) findViewById(R.id.design_program);
-       mAdapter=new DesigninspirateAdapter(CompanyDesignActivity.this,mCompdesignList);
+        mAdapter=new DesigninspirateAdapter(CompanyDesignActivity.this,mCompdesignList);
         mListView.setAdapter(mAdapter);
     }
 
@@ -66,7 +65,7 @@ public class CompanyDesignActivity extends AppCompatActivity {
         Type type=new TypeToken<List<Compdesign>>(){}.getType();
         List<Compdesign> compdesignList;
         compdesignList=gson.fromJson(designlist,type);
-        Log.e("-----------",compdesignList.toString());
+        Log.e("laz-------",compdesignList.toString());
         for (Compdesign compdesign:compdesignList) {
             int id=compdesign.getId();
             int cid=compdesign.getCid();
@@ -84,15 +83,8 @@ public class CompanyDesignActivity extends AppCompatActivity {
         }
     }
 
-   /* private void initData() {
-        mList=new ArrayList<>();
-        Compdesign d1=new Compdesign("楼盘名称：小石城","设计者：默默","风格：新古典","面积：100平方米","预报价：8~10万","房型：小户型","楼盘地址：苏州吴中","设计灵感：***",R.drawable.coll_recommend);
-        Compdesign d2=new Compdesign("楼盘名称：小石城","设计者：默默","风格：新古典","面积：100平方米","预报价：8~10万","房型：小户型","楼盘地址：苏州吴中","设计灵感：***",R.drawable.coll_recommend);
-        Compdesign d3=new Compdesign("楼盘名称：小石城","设计者：默默","风格：新古典","面积：100平方米","预报价：8~10万","房型：小户型","楼盘地址：苏州吴中","设计灵感：***",R.drawable.coll_recommend);
-        Compdesign d4=new Compdesign("楼盘名称：小石城","设计者：默默","风格：新古典","面积：100平方米","预报价：8~10万","房型：小户型","楼盘地址：苏州吴中","设计灵感：***",R.drawable.coll_recommend);
-        mList.add(d1);
-        mList.add(d2);
-        mList.add(d3);
-        mList.add(d4);
-    }*/
+
+    public void backcompany(View view) {
+        finish();
+    }
 }

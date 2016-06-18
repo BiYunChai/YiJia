@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -69,13 +70,13 @@ public class MyBuildActivity extends AppCompatActivity {
         Log.e("----------------","进入initData");
         boolean islogin=mSharedPreferenceslogin.getBoolean("islogin",false);
         Log.e("islogin","ok");
-       /* if(!islogin){
-          Toast.makeText(MyBuildActivity.this, "还没有登录哦", Toast.LENGTH_SHORT).show();
+        if(!islogin){
+          //Toast.makeText(MyBuildActivity.this, "还没有登录哦", Toast.LENGTH_SHORT).show();
         }
-        else{*/
+        else{
             //String username=mSharedPreferenceslogin.getString("username","error");
-            //String username=mSharedPreferenceslogin.getString("username","error");
-            String username="13140904592";
+            String username=mSharedPreferenceslogin.getString("username","error");
+            //String username="13140904592";
             RequestParams params=new RequestParams(HttpUrl.SEARCHBUILDING);
             params.addQueryStringParameter("username",username);
             x.http().get(params, new Callback.CommonCallback<String>() {
@@ -129,7 +130,7 @@ public class MyBuildActivity extends AppCompatActivity {
         mList.add(b4);
         mList.add(b5);
         mList.add(b6);*/
-    //}
+   }
 
     public void backME(View view) {
         finish();

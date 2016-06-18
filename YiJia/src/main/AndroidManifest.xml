@@ -85,6 +85,10 @@
         <activity android:name=".MesettingChangeaddressActivity" />
         <activity android:name=".CompanyDetailActivity" />
         <activity android:name=".CompanyDesignActivity" />
+        <activity android:name=".CompanyCertifyActivity"/>
+        <activity android:name=".CompanyRegistinfo"/>
+        <activity android:name=".CompaninfoActivity"/>
+
         <activity android:name=".SendPostActivity" />
         <activity android:name=".NewThemeActivity" />
         <activity android:name=".ThemeDatailActivity" />

@@ -110,7 +110,7 @@ public class DesignApplyActivity extends AppCompatActivity {
         boolean isregister=mSharedPreferences.getBoolean("isregister",false);
 
         boolean islogin=mSharedPreferenceslogin.getBoolean("islogin",false);
-        if(isregister){
+
             if(islogin){
                 String username=mSharedPreferenceslogin.getString("username","12345678901");
                 Log.e("yun--name","-------------------------");
@@ -131,15 +131,25 @@ public class DesignApplyActivity extends AppCompatActivity {
 
 
                 Log.e("yun-----------","访问网络");
+                Log.e("yun-----------",username);
+                Log.e("yun-----------",name);
+                Log.e("yun-----------",tel);
+                Log.e("yun-----------",spinnerStr);
+                Log.e("yun-----------",datailaddress);
+
                 x.http().post(params, new Callback.CommonCallback<String>() {
                     @Override
                     public void onSuccess(String result) {
+                        Log.e("yun-----------",result);
                         Gson gson=new Gson();
                         Type type=new TypeToken<String>(){}.getType();
                         String result2=gson.fromJson(result,type);
                         if(result2.equals("ok")){
+                            Log.e("yun-----------",result);
                             Toast.makeText(DesignApplyActivity.this,"申请成功，客服将于24小时内联系您！",Toast.LENGTH_SHORT).show();
-                            Intent intent=new Intent(DesignApplyActivity.this,MyBuildActivity.class);
+                           /* Intent intent=new Intent(DesignApplyActivity.this,MyBuildActivity.class);
+                            startActivity(intent);*/
+                            Intent intent=new Intent(DesignApplyActivity.this,MainActivity.class);
                             startActivity(intent);
                         }
                         else{
@@ -168,9 +178,6 @@ public class DesignApplyActivity extends AppCompatActivity {
             else{
                 Toast.makeText(DesignApplyActivity.this,"还没有登录呦，快去登录吧",Toast.LENGTH_LONG).show();
             }
-        }else{
-            Toast.makeText(DesignApplyActivity.this,"还没有注册呦，快去注册吧",Toast.LENGTH_LONG).show();
-        }
 
     }
 

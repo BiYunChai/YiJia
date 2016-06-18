@@ -50,6 +50,7 @@
                android:textSize="16sp"/>
        </LinearLayout>
         <EditText
+            android:id="@+id/writecontent"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
@@ -68,7 +69,7 @@
                 android:text="设计评分:"
                 android:textSize="16sp"/>
             <EditText
-
+                android:id="@+id/designscore"
                 android:layout_width="0dp"
                 android:layout_weight="4"
                 android:layout_height="wrap_content"
@@ -88,6 +89,7 @@
                 android:text="服务评分:"
                 android:textSize="16sp"/>
             <EditText
+                android:id="@+id/servicescore"
                 android:layout_width="0dp"
                 android:layout_weight="4"
                 android:layout_height="wrap_content"
@@ -107,6 +109,7 @@
                 android:text="施工评分:"
                 android:textSize="16sp"/>
             <EditText
+                android:id="@+id/jobscore"
                 android:layout_width="0dp"
                 android:layout_weight="4"
                 android:layout_height="wrap_content"
@@ -126,12 +129,12 @@
                 android:textColor="@color/textUp"
                 android:textSize="16sp"/>
             <TextView
-                android:id="@+id/comprehensive_rate"
+                android:id="@+id/averagescore"
                 android:layout_width="0dp"
                 android:layout_weight="4"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="4.8分"/>
+               />
         </LinearLayout>
 
         <Button

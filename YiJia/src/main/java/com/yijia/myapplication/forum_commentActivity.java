@@ -3,6 +3,7 @@ package com.yijia.myapplication;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.provider.ContactsContract;
 import android.support.v4.util.LogWriter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,6 +23,8 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.w4lle.library.NineGridlayout;
 import com.yijia.adapter.Comment_PicAdapter;
+import com.yijia.adapter.ForumCommentHeader_list_Adapter;
+import com.yijia.adapter.ForumDetail_list_Adapter;
 import com.yijia.adapter.Post_CommentAdapter;
 import com.yijia.bean.Comment;
 import com.yijia.bean.Post;
@@ -44,17 +47,20 @@ public class forum_commentActivity extends AppCompatActivity {
     private static final String LOGIN = "login";
     Post post;
     int pid=0;
-
+    ListView PostListView;
     LayoutInflater layoutInflater;
     ListView listview;
     String username;
+    String nickname;
     List<Post_comment>  commentlist=new ArrayList<>();
+    List<Post> postList=new ArrayList<>();
     ImageView com_userphoto;
     TextView com_usernickname;
     TextView com_postcontent;
     TextView com_time;
     NineGridlayout com_mNineGridlayout;
     Comment_PicAdapter mComment_picAdapter;
+    ForumCommentHeader_list_Adapter mForumCommentHeader_list_adapter;
     List<Postimg> mlistimg;
     List<Post_comment> post_comments;
     Post_CommentAdapter mPost_commentAdapter;
@@ -118,6 +124,18 @@ public class forum_commentActivity extends AppCompatActivity {
 
 
     private void initPostData(Post post) {
+
+        /*postList.add(post);
+        postList.add(post);
+        Log.e("postsize",postList.size()+"");
+        mForumCommentHeader_list_adapter=new ForumCommentHeader_list_Adapter(forum_commentActivity.this,postList);
+        PostListView.setAdapter(mForumCommentHeader_list_adapter);
+        mForumCommentHeader_list_adapter.notifyDataSetChanged();*/
+        /*ForumDetail_list_Adapter forumDetail_list_adapter=new ForumDetail_list_Adapter(forum_commentActivity.this,postList);
+        PostListView.setAdapter(forumDetail_list_adapter);*/
+        Log.e("yun","ok");
+
+
         com_usernickname.setText(post.getUsername());
         Log.e("cbycommentActivity",post.getUsername());
         com_postcontent.setText(post.getContent());
@@ -127,6 +145,8 @@ public class forum_commentActivity extends AppCompatActivity {
                 .load(post.getUserphoto())
                 .into(com_userphoto);
         Log.e("cbycommentActivity",post.getUserphoto());
+
+
         mComment_picAdapter=new Comment_PicAdapter(forum_commentActivity.this,mlistimg);
         com_mNineGridlayout.setAdapter(mComment_picAdapter);
         com_time.setText(post.getDate()+"");
@@ -151,6 +171,8 @@ public class forum_commentActivity extends AppCompatActivity {
         com_time= (TextView)view.findViewById(R.id.comment_header_time);
         com_mNineGridlayout= (NineGridlayout) view.findViewById(R.id.comment_header_pic);
 
+      //  PostListView= (ListView) view.findViewById(R.id.Comment_postlist);
+
 
         Log.e("cbycommentActivity","初始化头布局");
 
@@ -170,6 +192,7 @@ public class forum_commentActivity extends AppCompatActivity {
             String date=post_comment.getDate();
             Post_comment post_comment1=new Post_comment(username,nickname,content,date);
             commentlist.add(post_comment1);
+
             mPost_commentAdapter=new Post_CommentAdapter(forum_commentActivity.this,commentlist);
             listview.setAdapter(mPost_commentAdapter);
             mPost_commentAdapter.notifyDataSetChanged();
@@ -182,19 +205,20 @@ public class forum_commentActivity extends AppCompatActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isregister){
+
                     if(islogin){
                         String comment_content=mEditText.getText().toString();
                         username=mSharedPreferenceslogin.getString("username","error");
+                        nickname=mSharedPreferenceslogin.getString("nickname","error");
                         SimpleDateFormat sDateFormat=new SimpleDateFormat("yyyy-MM-dd");
                         String date=sDateFormat.format(new java.util.Date());
                         Log.e("content",comment_content);
-                        if(comment_content==null){
+                        if(comment_content.equals("")){
                             Toast.makeText(forum_commentActivity.this,"评论内容不能为空",Toast.LENGTH_SHORT).show();
                             Log.e("hhhh","评论内容不能为空");
 
                         }
-                        if(comment_content!=null){
+                        else{
 
 
                             RequestParams params=new RequestParams(HttpUrl.SENDCOMMEND);
@@ -204,9 +228,9 @@ public class forum_commentActivity extends AppCompatActivity {
                             params.addBodyParameter("commend_content",comment_content);
                             params.addBodyParameter("commend_date",date+"");
 
-                            Post_comment post_comment=new Post_comment(username,"佳宝宝",comment_content,date+"");
+                            Post_comment post_comment=new Post_comment(username,nickname,comment_content,date+"");
                             commentlist.add(post_comment);
-                            mPost_commentAdapter.notifyDataSetChanged();
+
                             x.http().post(params, new Callback.CommonCallback<String>() {
                                 @Override
                                 public void onSuccess(String result) {
@@ -232,13 +256,13 @@ public class forum_commentActivity extends AppCompatActivity {
                                 }
                             });
 
+
+
                         }
                     }else{
                         Toast.makeText(forum_commentActivity.this,"没有登录不能评论呦",Toast.LENGTH_LONG).show();
                     }
-                }else{
-                    Toast.makeText(forum_commentActivity.this,"没有注册账号不能评论呦",Toast.LENGTH_LONG).show();
-                }
+
 
 
 
