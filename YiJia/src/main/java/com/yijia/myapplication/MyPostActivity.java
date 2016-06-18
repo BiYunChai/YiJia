@@ -58,14 +58,9 @@ public class MyPostActivity extends AppCompatActivity {
         mSharedPreferenceslogin=getSharedPreferences(LOGIN,MODE_PRIVATE);
     }
     private void initData() {
-        /*mListpostFragment=new ArrayList<>();
-        mRaisePostFragment=new MyRaisePostFragment();
-        mRelyPostFragment=new MyRelyPostFragment();
-        mListpostFragment.add(mRaisePostFragment);
-        mListpostFragment.add(mRelyPostFragment);
-        mFragmentManager=getSupportFragmentManager();
-        mPostAdapter=new MyPostAdapter(mFragmentManager,mListpostFragment);
-        mViewPagerPost.setAdapter(mPostAdapter);*/
+
+
+
         String username=mSharedPreferenceslogin.getString("username","error");
         RequestParams params=new RequestParams(HttpUrl.USERPOST);
         //params.addBodyParameter("username","13092605210");
