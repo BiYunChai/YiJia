@@ -6,6 +6,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
 
 /**
  * Created by Administrator on 2016/5/21 0021.
@@ -39,6 +42,10 @@ public class WelcomeAty extends Activity {
     }
 
     private  void init(){
+        ImageView imageView= (ImageView) findViewById(R.id.welcom);
+        Glide.with(WelcomeAty.this)
+                .load("http://o7ghiqnts.bkt.clouddn.com/guide3.jpg")
+                .into(imageView);
         SharedPreferences preferences = getSharedPreferences("hyq",MODE_PRIVATE);
         isfirstIn = preferences.getBoolean("isfirstIn",true);
         if (!isfirstIn){
