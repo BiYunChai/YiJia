@@ -23,7 +23,7 @@
             android:textSize="20sp"
             android:layout_marginTop="8dp"
             android:textColor="#ffffff"
-            android:text="装修公司"/>
+            android:text="计算器"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
